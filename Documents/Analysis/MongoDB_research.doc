@@ -1,0 +1,227 @@
+MY HEALTH CODE
+
+MongoDB Document
+
+
+My Health Code Team
+
+3/17/2015
+
+
+
+This documents serves as a reference for basic mongoDB related commands and related information. Please keep updating the document with any of your findings that can help the team.
+
+
+ 
+Table of Contents
+Create Collections	2
+Insert Records/Documents  into Collection	3
+Query a record	6
+Query by “name”	6
+Query by ‘Health Code’	7
+
+
+
+
+ 
+Create Collections
+db.createCollection("Personal_Details")
+"ok" : 1 }
+db.createCollection("Login_Details")
+"ok" : 1 }
+db.createCollection("Health_Unit_Details")
+"ok" : 1 }
+db.createCollection("Doctor_Details")
+"ok" : 1 }
+db.createCollection("Doctor_Specialization")
+"ok" : 1 }
+db.createCollection("Visit_Entry_Details")
+"ok" : 1 }
+db.createCollection("Visit_Diagnostic_Suggestions")
+"ok" : 1 }
+db.createCollection("Visti_Diagnostic_Reports")
+"ok" : 1 }
+db.createCollection("Visit_Medicine_Suggestions")
+"ok" : 1 }
+db.createCollection("Group_Personal_Mapping")
+"ok" : 1 }
+db.createCollection("Insurance_Org_Details")
+"ok" : 1 }
+db.createCollection("Personal_Insurance_Mapping")
+"ok" : 1 }
+
+Insert Records/Documents  into Collection
+
+Insert record 1
+> db.Person_Details.insert([
+... {
+...    name: 'Rama',
+...    age: 31,
+...    gender: 'Male',
+...    healthCode: '0101',
+...    mobile: '9963481050',
+...    email: 'rama.vadlamudi@gmail.com',
+...    address: [
+...       {
+...          address1:'plot#',
+...          address2: 'Gajularamaram',
+...          city: 'Hyderabad',
+...          state: 'Telangana',
+...  country: 'India',
+...  pin: '500055'
+...       }
+...   ],
+...     login: [{
+... healthCode: '0101',
+... mobile: '9963481050',
+... email: 'rama.vadlamudi@gmail.com',
+... password: 'xxxxxx'
+... }
+... ]
+... }
+... ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+Insert record 2
+> db.PersonCollection.insert([
+... {
+...    name: 'Parvath',
+...    age: 32,
+...    gender: 'Male',
+...    healthCode: '0102',
+...    mobile: '9849679463',
+...    email: 'parvath.bingi@gmail.com',
+...    address: [
+...       {
+...          address1:'plot#',
+...          address2: 'LB Nagar',
+...          city: 'Hyderabad',
+...          state: 'Telangana',
+...  country: 'India',
+...  pin: '500074'
+...       }
+...   ],
+...     login: [{
+... healthCode: '0102',
+... mobile: '9849679463',
+... email: 'parvath.bingi@gmail.com',
+... password: 'xxxxxx'
+... }
+... ]
+... }
+... ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+
+
+
+Query a record
+Query by “name”
+> db.PersonCollection.find({"name":"Parvath"}).pretty()
+{
+        "_id" : ObjectId("550867049ebef981565385ce"),
+        "name" : "Parvath",
+        "age" : 32,
+        "gender" : "Male",
+        "healthCode" : "0102",
+        "mobile" : "9849679463",
+        "email" : "parvath.bingi@gmail.com",
+        "address" : [
+                {
+                        "address1" : "plot#",
+                        "address2" : "LB Nagar",
+                        "city" : "Hyderabad",
+                        "state" : "Telangana",
+                        "country" : "India",
+                        "pin" : "500074"
+                }
+        ],
+        "login" : [
+                {
+                        "healthCode" : "0102",
+                        "mobile" : "9849679463",
+                        "email" : "parvath.bingi@gmail.com",
+                        "password" : "xxxxxx"
+                }
+        ]
+}
+>
+
+Query by ‘Health Code’
+> db.PersonCollection.find({"healthCode":"0101"}).pretty()
+{
+        "_id" : ObjectId("550866109ebef981565385cd"),
+        "name" : "Rama",
+        "age" : 31,
+        "gender" : "Male",
+        "healthCode" : "0101",
+        "mobile" : "9963481050",
+        "email" : "rama.vadlamudi@gmail.com",
+        "address" : [
+                {
+                        "address1" : "plot#",
+                        "address2" : "Gajularamaram",
+                        "city" : "Hyderabad",
+                        "state" : "Telangana",
+                        "country" : "India",
+                        "pin" : "500055"
+                }
+        ],
+        "login" : [
+                {
+                        "healthCode" : "0101",
+                        "mobile" : "9963481050",
+                        "email" : "rama.vadlamudi@gmail.com",
+                        "password" : "xxxxxx"
+                }
+        ]
+}
+
+Connecting Using Java Code
+Download the MongoDB jar from http://docs.mongodb.org/ecosystem/drivers/java/
+Here is the sample code to connect to the Mongo DB:
+
+import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
+import com.mongodb.WriteConcern;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.ServerAddress;
+import java.util.Arrays;
+
+public class MongoDBJDBC{
+   public static void main( String args[] ){
+      try{   
+		 // To connect to mongodb server
+         MongoClient mongoClient = new MongoClient( "localhost" , 27017 );
+         // Now connect to your databases
+         DB db = mongoClient.getDB( "test" );
+		 System.out.println("Connect to database successfully");
+         boolean auth = db.authenticate(myUserName, myPassword);
+		 System.out.println("Authentication: "+auth);
+      }catch(Exception e){
+	     System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	  }
+   }
+}
+
+
