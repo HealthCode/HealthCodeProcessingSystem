@@ -8,19 +8,19 @@
 	http://www.springframework.org/schema/data/mongo
 	http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
-	<context:component-scan base-package="com.healthcode.patient.repositories" />
-	<context:component-scan base-package="com.healthcode.springdata.patient.model.domain"/>
+	<context:component-scan base-package="com.healthcode.dao.patient" />
+	<context:component-scan base-package="com.healthcode.model.patient"/>
 	<context:annotation-config />
 
-	<bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
 			<property name="host" value="localhost" />
 			<property name="port" value="27017" />
 	</bean>
 
-	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-			<constructor-arg name="mongo" ref="mongo" />
-			<constructor-arg name="databaseName" value="MyHealth" />
+	<bean id="mongoTemplate" name="mongaDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
+			<constructor-arg name="mongo" ref="mongoDB" />
+			<constructor-arg name="databaseName" value="HealthCodeDB" />
 	</bean>
-	<mongo:repositories base-package="com.healthcode.patient.repositories" />
+	<mongo:repositories base-package="com.healthcode.dao.patient" />
 	
 </beans>	

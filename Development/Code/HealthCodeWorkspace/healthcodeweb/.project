@@ -3,9 +3,9 @@
 	<name>healthcodeweb</name>
 	<comment></comment>
 	<projects>
-		<project>healthcodemodel</project>
 		<project>healthcodeservice</project>
 		<project>healthcodecommon</project>
+		<project>healthcodemodel</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
