@@ -1,4 +1,4 @@
-package com.healthcode.model.patient;
+package com.healthcode.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,17 +7,35 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * 
  * @author Rama Vadlamudi
  * 
- * This POJO represents 'Patient' collection in MongoDB 
+ * This POJO represents 'Patient' collection in DB 
  *
  */
-@Document(collection="Patient")
+@Document(collection="Patient_Details")
 public class Patient {
 	@Id
 	private String id;
 	private String firstName;
 	private String lastName;
 	private String healthCode;
+	private String age;
+	private String gender;
 	
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	public Patient(){
 		
 	}

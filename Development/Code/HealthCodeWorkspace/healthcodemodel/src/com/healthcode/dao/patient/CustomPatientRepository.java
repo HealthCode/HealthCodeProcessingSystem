@@ -1,6 +1,6 @@
 package com.healthcode.dao.patient;
 
-import com.healthcode.model.patient.Patient;
+import com.healthcode.model.Patient;
 
 /**
  * 

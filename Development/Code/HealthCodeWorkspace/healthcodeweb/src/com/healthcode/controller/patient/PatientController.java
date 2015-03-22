@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.healthcode.model.patient.Patient;
+import com.healthcode.model.Patient;
 import com.healthcode.service.patient.PatientService;
 
 @Controller

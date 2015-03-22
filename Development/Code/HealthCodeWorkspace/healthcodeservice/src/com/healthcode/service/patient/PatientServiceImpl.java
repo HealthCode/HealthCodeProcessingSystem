@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.healthcode.dao.patient.PatientRepository;
-import com.healthcode.model.patient.Patient;
+import com.healthcode.model.Patient;
 
 @Service
 public class PatientServiceImpl implements PatientService{

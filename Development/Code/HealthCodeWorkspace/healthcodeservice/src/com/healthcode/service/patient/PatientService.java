@@ -2,7 +2,7 @@ package com.healthcode.service.patient;
 
 import java.util.List;
 
-import com.healthcode.model.patient.Patient;
+import com.healthcode.model.Patient;
 
 public interface PatientService {
 	
