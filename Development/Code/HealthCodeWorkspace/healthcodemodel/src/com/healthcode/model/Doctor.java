@@ -16,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Doctor {
 	@Id
 	private String id;
+	private String doctorCode;
 	private String firstName;
 	private String lastName;
 	private List<String> specilizations;
@@ -29,6 +30,14 @@ public class Doctor {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
+	public String getDoctorCode() {
+		return doctorCode;
+	}
+	public void setDoctorCode(String doctorCode) {
+		this.doctorCode = doctorCode;
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}

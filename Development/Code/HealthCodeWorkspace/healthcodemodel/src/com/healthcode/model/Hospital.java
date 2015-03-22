@@ -1,5 +1,7 @@
 package com.healthcode.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,7 +19,7 @@ public class Hospital {
 	private String Id;
 	private String name;
 	private Address address;
-
+	private List<String> doctors;
 	
 	public String getId() {
 		return Id;
@@ -37,5 +39,13 @@ public class Hospital {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	public List<String> getDoctors() {
+		return doctors;
+	}
+	public void setDoctors(List<String> doctors) {
+		this.doctors = doctors;
+	}
+	
+	
 
 }
