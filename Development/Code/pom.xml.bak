@@ -8,7 +8,7 @@
   <artifactId>parent</artifactId>
   <version>0.8-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>HealthCode Main Parent Project</name>
+  <name>Multi-Spring Chapter Parent Project</name>
   <modules>
     <module>HealthCodeWorkspace</module>
   </modules>

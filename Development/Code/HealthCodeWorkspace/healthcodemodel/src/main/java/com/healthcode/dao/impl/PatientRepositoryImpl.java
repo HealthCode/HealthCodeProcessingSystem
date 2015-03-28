@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import com.healthcode.dao.Constants;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.PersonInterface;
 import com.healthcode.model.Patient;
@@ -22,48 +23,43 @@ import com.healthcode.model.PersonDetails;
 @Repository
 public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implements PatientRepository {
 
-	
-	@Override
-	public PersonDetails getPersonByHealthCode(String healthCode) {
+	public Patient getPersonByHealthCode(String healthCode) {
 		MongoOperations mongoOp = (MongoOperations) getMongoDBInstance();
 		//Query 'Patient' collection by Health Code
 		Query searchPatientbyHealthCode = new Query(Criteria
-								.where(PersonInterface.HEALTHCODE)
+								.where(Constants.HEALTHCODE)
 								.is(healthCode)); 
-		PersonDetails patient = mongoOp.findOne(searchPatientbyHealthCode,Patient.class); 
+		Patient patient = mongoOp.findOne(searchPatientbyHealthCode,Patient.class); 
 		
 		return patient;
 	}
 
-	@Override
-	public Collection<PersonDetails> getPersonByCity(String cityName) {
+	public Collection<Patient> getPersonByCity(String cityName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
-			Integer end) {
+	public Collection<Patient> getPersonByAgeRange(Integer start, Integer end) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Collection<PersonDetails> getPersonByGender(String gender) {
+	public Collection<Patient> getPersonByGender(String gender) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Collection<PersonDetails> getPersonByGenderAndAge(String geneder,
+	public Collection<Patient> getPersonByGenderAndAge(String geneder,
 			Integer start, Integer end) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public Collection<Patient> getPersonByDisease(String diseaseName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
+	
 }

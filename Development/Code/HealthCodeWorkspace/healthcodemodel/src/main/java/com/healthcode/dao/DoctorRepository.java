@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import com.healthcode.model.Doctor;
+import com.healthcode.model.Patient;
 
 /**
  *
@@ -14,7 +15,7 @@ import com.healthcode.model.Doctor;
  *
  */
 @Repository
-public interface DoctorRepository extends MongoRepository<Doctor, String>, PersonInterface<Doctor>{
+public interface DoctorRepository extends PersonInterface<Doctor>{
 	
 	Doctor getDoctorBySpecilization(String specilization);
 	

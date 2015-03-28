@@ -2,9 +2,11 @@ package com.healthcode.dao;
 
 import java.util.Collection;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
+
 import com.healthcode.model.PersonDetails;
 
-public interface PersonInterface<T>{
+public interface PersonInterface<T>  extends MongoRepository<T, String>{
 
 	T getPersonByHealthCode(String healthCode);
 	

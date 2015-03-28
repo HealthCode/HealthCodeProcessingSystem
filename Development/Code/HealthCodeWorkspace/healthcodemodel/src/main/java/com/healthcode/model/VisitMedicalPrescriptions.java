@@ -20,12 +20,7 @@ public class VisitMedicalPrescriptions extends ModelEntity{
 	private String medicineName;
 	private String dosage;
 	private String timings;
-	public String getId() {
-		return Id;
-	}
-	public void setId(String id) {
-		Id = id;
-	}
+
 	
 	public String getHealthCode() {
 		return healthCode;

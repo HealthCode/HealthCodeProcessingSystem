@@ -1,6 +1,6 @@
 package com.healthcode.dao;
 
-public interface Contants {
+public interface Constants {
 
 	public final static String HEALTHCODE = "healthCode";
 	public final static String CITY = "city";

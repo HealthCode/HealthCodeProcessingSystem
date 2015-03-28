@@ -9,7 +9,7 @@
 
   <artifactId>healthcodewebapp</artifactId>
   <packaging>war</packaging>
-  <name>HealthCode Web Module</name>
+  <name>Multi Chapter Simple Web Application Project</name>
   <dependencies>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
