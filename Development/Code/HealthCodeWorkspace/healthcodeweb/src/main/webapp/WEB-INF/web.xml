@@ -23,8 +23,8 @@
   <context-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>/WEB-INF/healthcode-dispatcher-servlet.xml
-				 classpath:/context/healthcode-model-context.xml
-				 classpath:/context/healthcode-service-context.xml</param-value>
+				classpath:/context/healthcode-model-context.xml
+				classpath:/context/healthcode-service-context.xml</param-value>
   </context-param>
  
   <listener>
