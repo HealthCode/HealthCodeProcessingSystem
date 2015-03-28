@@ -3,7 +3,7 @@
   
     <parent>
     <groupId>com.healthcode.system</groupId>
-    <artifactId>HealthCodeWorkspace</artifactId>
+    <artifactId>HealthCodeSystem</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
   <artifactId>healthcodecommon</artifactId>

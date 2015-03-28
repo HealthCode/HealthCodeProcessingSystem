@@ -9,7 +9,7 @@
   	<artifactId>parent</artifactId>
   	<version>0.8-SNAPSHOT</version>
   </parent>
-  <artifactId>HealthCodeWorkspace</artifactId>
+  <artifactId>HealthCodeSystem</artifactId>
   <packaging>pom</packaging>
   <name>Health Code Project</name>
  

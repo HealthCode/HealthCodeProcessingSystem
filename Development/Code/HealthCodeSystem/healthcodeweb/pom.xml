@@ -3,13 +3,13 @@
    <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.healthcode.system</groupId>
-    <artifactId>HealthCodeWorkspace</artifactId>
+    <artifactId>HealthCodeSystem</artifactId>
     <version>0.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>healthcodewebapp</artifactId>
   <packaging>war</packaging>
-  <name>Multi Chapter Simple Web Application Project</name>
+  <name>HealthCode Web Module</name>
   <dependencies>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
