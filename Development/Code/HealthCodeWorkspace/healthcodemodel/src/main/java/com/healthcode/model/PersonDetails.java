@@ -10,6 +10,7 @@ public class PersonDetails extends ModelEntity{
 	private String gender;
 	private Address address;
 	private ContactInfo contacts;
+	private String groupId;
 	
 	public String getFirstName() {
 		return firstName;
@@ -52,6 +53,12 @@ public class PersonDetails extends ModelEntity{
 	}
 	public void setContacts(ContactInfo contacts) {
 		this.contacts = contacts;
+	}
+	public String getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 	
 	

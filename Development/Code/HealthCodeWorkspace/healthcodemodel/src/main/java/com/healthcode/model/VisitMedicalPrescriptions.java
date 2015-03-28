@@ -20,6 +20,7 @@ public class VisitMedicalPrescriptions extends ModelEntity{
 	private String medicineName;
 	private String dosage;
 	private String timings;
+	private Integer duration; //No Of Days
 
 	
 	public String getHealthCode() {
@@ -52,7 +53,10 @@ public class VisitMedicalPrescriptions extends ModelEntity{
 	public void setTimings(String timings) {
 		this.timings = timings;
 	}
-	
-	
-
+	public Integer getDuration() {
+		return duration;
+	}
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+	}
 }

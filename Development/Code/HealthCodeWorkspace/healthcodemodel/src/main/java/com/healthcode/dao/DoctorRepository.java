@@ -17,11 +17,11 @@ import com.healthcode.model.Patient;
 @Repository
 public interface DoctorRepository extends PersonInterface<Doctor>{
 	
-	Doctor getDoctorBySpecilization(String specilization);
+	Collection<Doctor> getDoctorsBySpecilization(String specilization);
 	
-	Doctor getDoctorByArea(String area);
+	Collection<Doctor> getDoctorsByArea(String area);
 	
-	Doctor getDoctorByRating(String specilization);
+	Collection<Doctor> getDoctorsByRating(String specilization,String rating);
 	
 	Collection<Doctor> getDoctorsByHospital(String hospitalName);
 }

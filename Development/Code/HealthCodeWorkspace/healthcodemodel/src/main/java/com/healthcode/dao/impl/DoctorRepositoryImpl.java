@@ -57,17 +57,12 @@ public class DoctorRepositoryImpl extends BaseRepositoryImpl<Doctor> implements 
 		return null;
 	}
 
-	public Doctor getDoctorBySpecilization(String specilization) {
+	public Collection<Doctor> getDoctorsBySpecilization(String specilization) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Doctor getDoctorByArea(String area) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Doctor getDoctorByRating(String specilization) {
+	public Collection<Doctor> getDoctorsByArea(String area) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -76,7 +71,10 @@ public class DoctorRepositoryImpl extends BaseRepositoryImpl<Doctor> implements 
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
+	public Collection<Doctor> getDoctorsByRating(String specilization,String rating) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

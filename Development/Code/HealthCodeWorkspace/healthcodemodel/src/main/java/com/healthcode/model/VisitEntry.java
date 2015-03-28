@@ -18,7 +18,10 @@ public class VisitEntry extends ModelEntity{
 	private String doctorCode;
 	private String healthCode;
 	private List<VisitMedicalPrescriptions> prescriptions;
+	VisitDiagnosticPrescription diagnosticSuggestions;
 	private Date visitDate;
+	Boolean isReminderRequired;
+	Date nextAppointment;
 	
 	public String getVisitEntryRef() {
 		return visitEntryRef;
@@ -50,8 +53,24 @@ public class VisitEntry extends ModelEntity{
 	public void setPrescriptions(List<VisitMedicalPrescriptions> prescriptions) {
 		this.prescriptions = prescriptions;
 	}
-	
-	
-	
+	public VisitDiagnosticPrescription getDiagnosticSuggestions() {
+		return diagnosticSuggestions;
+	}
+	public void setDiagnosticSuggestions(
+			VisitDiagnosticPrescription diagnosticSuggestions) {
+		this.diagnosticSuggestions = diagnosticSuggestions;
+	}
+	public Boolean getIsReminderRequired() {
+		return isReminderRequired;
+	}
+	public void setIsReminderRequired(Boolean isReminderRequired) {
+		this.isReminderRequired = isReminderRequired;
+	}
+	public Date getNextAppointment() {
+		return nextAppointment;
+	}
+	public void setNextAppointment(Date nextAppointment) {
+		this.nextAppointment = nextAppointment;
+	}
 	
 }

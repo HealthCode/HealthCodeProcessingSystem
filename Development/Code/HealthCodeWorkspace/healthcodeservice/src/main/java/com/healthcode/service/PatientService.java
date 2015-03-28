@@ -1,34 +1,40 @@
 package com.healthcode.service;
 
+import java.io.File;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import com.healthcode.model.Patient;
-import com.healthcode.model.PersonDetails;
 
-public interface PatientService {
+public interface PatientService extends CoreService<Patient>{
 	
 	/**
 	 * 
-	 * Gets the details of all the patients
+	 * Gets the details of all the patients, Why need this kind of service??? TODO: Task
+	 * @param List of keys
 	 * @return Patients
 	 * @throws Exception
 	 */
+
 	public List<Patient> getAllPatients() throws Exception;
 	
-	/**
-	 * 
-	 * Saves a patient information to collection
-	 * @param patient
-	 * @throws Exception
-	 */
-	public void savePatientDetails(Patient patient) throws Exception;
+	public Collection<Patient> getPatientsByCity(final String cityName);
 	
-	/**
-	 * 
-	 * Retrieves the details of a patient by HealthCode
-	 * @param healthCode
-	 * @return Patient
-	 * @throws Exception
-	 */
-	public PersonDetails getPatient(String healthCode) throws Exception;
+	Collection<Patient> getPersonByDisease(String diseaseName);
+	
+	void bookDocAppointment(String docCode,Date dateTime);
+	
+	void uploadMedicalRecords(final String healthCode, Collection<File> medicalRecord);
+	
+	Collection<File> getMedicalRecords(final String healthCode);
+	
+	Collection<Patient> getFamilyMemberDetails(final String healthCode);
+	
+	Collection<Patient> getPatientByDisease(final String diseaseName);
+	
+	void grantAccessToDoctor(final String healthCodeOfDoc, Date date);
+	
+	void grantFamilyAccesstoDoctor(final String heathCodeOfDoc, Date date);
+	
 }

@@ -17,6 +17,7 @@ public class Doctor extends PersonDetails{
 	// I don't want to generate separate code for them
 	// If Doctor logins with his code, he will be in doc role.
 	private String doctorCode;
+	private String registrationCode;
 	private String diploma;
 	private String board;
 	private List<String> specilizations;
@@ -30,6 +31,12 @@ public class Doctor extends PersonDetails{
 	private Integer yearsOfExp;
 	
 	
+	public String getRegistrationCode() {
+		return registrationCode;
+	}
+	public void setRegistrationCode(String registrationCode) {
+		this.registrationCode = registrationCode;
+	}
 	public String getDoctorCode() {
 		return doctorCode;
 	}

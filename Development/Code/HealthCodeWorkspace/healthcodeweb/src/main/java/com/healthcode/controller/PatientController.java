@@ -1,4 +1,4 @@
-package com.healthcode.patient.controller;
+package com.healthcode.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.healthcode.patient.service.PatientService;
-import com.healthcode.springdata.patient.model.domain.Patient;
+import com.healthcode.model.Patient;
+import com.healthcode.service.PatientService;
 
 @Controller
 public class PatientController {
