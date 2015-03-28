@@ -1,8 +1,9 @@
-package com.healthcode.service.patient;
+package com.healthcode.service;
 
 import java.util.List;
 
 import com.healthcode.model.Patient;
+import com.healthcode.model.PersonDetails;
 
 public interface PatientService {
 	
@@ -29,5 +30,5 @@ public interface PatientService {
 	 * @return Patient
 	 * @throws Exception
 	 */
-	public Patient getPatient(String healthCode) throws Exception;
+	public PersonDetails getPatient(String healthCode) throws Exception;
 }

@@ -1,32 +1,34 @@
 package com.healthcode.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * 
- * @author Parvath Bingi
  * 
  * This POJO represents 'Authentication Details' collection in DB 
  *
  */
 @Document(collection="Auth_Details")
 
-public class AuthDetails {
-	@Id
-	private String Id;
+public class AuthDetails extends ModelEntity{
+
 	private String healthCode;
-	private String email;
-	private String mobile;
 	//TODO : has to be a encrypted field.
 	private String password;
+	// This will be set to true, if user registers as doctor. How to ensure that is actully a doc?
+	private String role; 
+	private Date passwordModified;
+	private String helpQuestion;
+	private String helpAnswer;
 	
-	
-	public String getId() {
-		return Id;
+	//Check if the person with this health code is a doctor. 
+	public String getRole() {
+		return role;
 	}
-	public void setId(String id) {
-		Id = id;
+	public void setRole(String role) {
+		this.role = role;
 	}
 	public String getHealthCode() {
 		return healthCode;
@@ -34,23 +36,29 @@ public class AuthDetails {
 	public void setHealthCode(String healthCode) {
 		this.healthCode = healthCode;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public Date getPasswordModified() {
+		return passwordModified;
+	}
+	public void setPasswordModified(Date passwordModified) {
+		this.passwordModified = passwordModified;
+	}
+	public String getHelpQuestion() {
+		return helpQuestion;
+	}
+	public void setHelpQuestion(String helpQuestion) {
+		this.helpQuestion = helpQuestion;
+	}
+	public String getHelpAnswer() {
+		return helpAnswer;
+	}
+	public void setHelpAnswer(String helpAnswer) {
+		this.helpAnswer = helpAnswer;
 	}
 	
 

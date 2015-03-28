@@ -1,6 +1,5 @@
 package com.healthcode.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -12,9 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 
 @Document(collection="Address_Details")
-public class Address {
-	@Id
-	private String id;
+public class Address extends ModelEntity{
 	private String address1;
 	private String address2;
 	private String city;
@@ -22,12 +19,6 @@ public class Address {
 	private String country;
 	private String pin;
 	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getAddress1() {
 		return address1;
 	}

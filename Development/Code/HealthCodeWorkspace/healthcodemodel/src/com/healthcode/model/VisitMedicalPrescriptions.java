@@ -12,9 +12,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document(collection="Visit_Prescription_Details")
-public class VisitPrescriptions {
-	@Id
-	private String Id;
+public class VisitMedicalPrescriptions extends ModelEntity{
+
 	//TODO : This is mandatory filed, @required?
 	private String healthCode;
 	private String visitEntryRef;

@@ -8,28 +8,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * 
- * @author Parvath Bingi
- * 
  * This POJO represents 'Visit Entry Details' collection in DB 
  *
  */
 @Document(collection="Visit_Entry_Details")
-public class VisitEntry {
-	@Id
-	private String Id;
+public class VisitEntry extends ModelEntity{
+
 	private String visitEntryRef;
 	private String doctorCode;
 	private String healthCode;
-	private List<VisitPrescriptions> prescriptions;
+	private List<VisitMedicalPrescriptions> prescriptions;
 	private Date visitDate;
 	
-	
-	public String getId() {
-		return Id;
-	}
-	public void setId(String id) {
-		Id = id;
-	}
 	public String getVisitEntryRef() {
 		return visitEntryRef;
 	}
@@ -54,10 +44,10 @@ public class VisitEntry {
 	public void setVisitDate(Date visitDate) {
 		this.visitDate = visitDate;
 	}
-	public List<VisitPrescriptions> getPrescriptions() {
+	public List<VisitMedicalPrescriptions> getPrescriptions() {
 		return prescriptions;
 	}
-	public void setPrescriptions(List<VisitPrescriptions> prescriptions) {
+	public void setPrescriptions(List<VisitMedicalPrescriptions> prescriptions) {
 		this.prescriptions = prescriptions;
 	}
 	

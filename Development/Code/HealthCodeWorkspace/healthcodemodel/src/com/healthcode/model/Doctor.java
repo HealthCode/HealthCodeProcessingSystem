@@ -7,29 +7,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * 
- * @author Parvath Bingi
- * 
  * This POJO represents 'Doctor' collection in DB 
  *
  */
 @Document(collection="Doctor_Details")
-public class Doctor {
-	@Id
-	private String id;
+public class Doctor extends PersonDetails{
+	
+	// This code is same as healthCode for doctors,
+	// I don't want to generate separate code for them
+	// If Doctor logins with his code, he will be in doc role.
 	private String doctorCode;
-	private String firstName;
-	private String lastName;
+	private String diploma;
+	private String board;
 	private List<String> specilizations;
 	private List<String> Hospitals;
 	private Double fee;
+	private Boolean isActive;
+	//Self description of the doctor about his background and history.
+	private String description;
+	private Integer appointmentDuration;
+	private Integer advanceBookingDays;
+	private Integer yearsOfExp;
 	
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	
 	public String getDoctorCode() {
 		return doctorCode;
@@ -38,18 +37,6 @@ public class Doctor {
 		this.doctorCode = doctorCode;
 	}
 	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 	public List<String> getSpecilizations() {
 		return specilizations;
 	}
@@ -68,5 +55,49 @@ public class Doctor {
 	public void setFee(Double fee) {
 		this.fee = fee;
 	}
+	public String getDiploma() {
+		return diploma;
+	}
+	public void setDiploma(String diploma) {
+		this.diploma = diploma;
+	}
+	public String getBoard() {
+		return board;
+	}
+	public void setBoard(String board) {
+		this.board = board;
+	}
+	public Boolean getIsActive() {
+		return isActive;
+	}
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Integer getAppointmentDuration() {
+		return appointmentDuration;
+	}
+	public void setAppointmentDuration(Integer appointmentDuration) {
+		this.appointmentDuration = appointmentDuration;
+	}
+	public Integer getAdvanceBookingDays() {
+		return advanceBookingDays;
+	}
+	public void setAdvanceBookingDays(Integer advanceBookingDays) {
+		this.advanceBookingDays = advanceBookingDays;
+	}
+	public Integer getYearsOfExp() {
+		return yearsOfExp;
+	}
+	public void setYearsOfExp(Integer yearsOfExp) {
+		this.yearsOfExp = yearsOfExp;
+	}
+	
+	
 	
 }

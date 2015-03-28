@@ -15,22 +15,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection="Patient_Diagnostic_Details")
 
-public class PatientDiagnosticReports {
-	@Id
-	private String Id;
+public class PatientDiagnosticReports extends ModelEntity{
+
 	//TODO : This is mandatory filed, @required?
 	private String healthCode;
 	//This could be null for old records
 	private String visitEntryRef;
-	//Report file stored in DB for each suggestion as key
+	//Report file stored in DB for each diagnostic suggestion as key
 	private Map<String,File> reportFile;
-
-	public String getId() {
-		return Id;
-	}
-	public void setId(String id) {
-		Id = id;
-	}
 
 	public String getVisitEntryRef() {
 		return visitEntryRef;
