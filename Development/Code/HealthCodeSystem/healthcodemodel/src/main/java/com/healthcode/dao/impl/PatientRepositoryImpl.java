@@ -16,8 +16,8 @@ import org.springframework.stereotype.Repository;
 import com.healthcode.dao.Constants;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.PersonInterface;
-import com.healthcode.model.Patient;
-import com.healthcode.model.PersonDetails;
+import com.healthcode.entity.Patient;
+import com.healthcode.entity.PersonDetails;
 
 
 @Repository

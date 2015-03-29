@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.healthcode.model.PersonDetails;
+import com.healthcode.entity.PersonDetails;
 
 public interface PersonInterface<T>  extends MongoRepository<T, String>{
 

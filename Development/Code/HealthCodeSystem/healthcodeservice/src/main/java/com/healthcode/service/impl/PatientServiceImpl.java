@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.healthcode.dao.PatientRepository;
-import com.healthcode.model.Patient;
+import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
 @Service

@@ -5,8 +5,8 @@ import java.util.Collection;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.healthcode.model.Doctor;
-import com.healthcode.model.Patient;
+import com.healthcode.entity.Doctor;
+import com.healthcode.entity.Patient;
 
 /**
  *

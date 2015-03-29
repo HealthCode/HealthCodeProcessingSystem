@@ -3,7 +3,8 @@ package com.healthcode.dao;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Collection;
-import com.healthcode.model.Hospital;
+
+import com.healthcode.entity.Hospital;
 
 public interface HospitalRepository extends MongoRepository<Hospital, String>, MedicalUnitInterface{
 	

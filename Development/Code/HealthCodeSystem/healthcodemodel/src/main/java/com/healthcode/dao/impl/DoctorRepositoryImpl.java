@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.query.Query;
 
 import com.healthcode.dao.Constants;
 import com.healthcode.dao.DoctorRepository;
-import com.healthcode.model.Doctor;
+import com.healthcode.entity.Doctor;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 

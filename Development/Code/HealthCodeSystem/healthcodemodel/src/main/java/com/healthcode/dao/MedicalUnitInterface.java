@@ -1,7 +1,8 @@
 package com.healthcode.dao;
 
 import java.util.Collection;
-import com.healthcode.model.MedicalUnit;
+
+import com.healthcode.entity.MedicalUnit;
 
 public interface MedicalUnitInterface{
 

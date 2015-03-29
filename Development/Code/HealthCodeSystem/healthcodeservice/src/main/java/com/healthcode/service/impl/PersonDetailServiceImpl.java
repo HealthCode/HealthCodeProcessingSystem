@@ -2,8 +2,8 @@ package com.healthcode.service.impl;
 
 import java.util.Collection;
 
-import com.healthcode.model.Patient;
-import com.healthcode.model.PersonDetails;
+import com.healthcode.entity.Patient;
+import com.healthcode.entity.PersonDetails;
 import com.healthcode.service.PatientService;
 import com.healthcode.service.PersonDetailsService;
 

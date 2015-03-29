@@ -3,9 +3,9 @@ package com.healthcode.service.impl;
 import java.util.Collection;
 import java.util.List;
 
-import com.healthcode.model.Address;
-import com.healthcode.model.AuthDetails;
-import com.healthcode.model.ContactInfo;
+import com.healthcode.entity.Address;
+import com.healthcode.entity.AuthDetails;
+import com.healthcode.entity.ContactInfo;
 import com.healthcode.service.AuthorizationService;
 
 public class AuthorizationServiceImpl implements AuthorizationService {

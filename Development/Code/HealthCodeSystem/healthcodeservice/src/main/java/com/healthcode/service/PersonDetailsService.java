@@ -2,10 +2,10 @@ package com.healthcode.service;
 
 import java.util.Collection;
 
-import com.healthcode.model.Address;
-import com.healthcode.model.ContactInfo;
-import com.healthcode.model.Patient;
-import com.healthcode.model.PersonDetails;
+import com.healthcode.entity.Address;
+import com.healthcode.entity.ContactInfo;
+import com.healthcode.entity.Patient;
+import com.healthcode.entity.PersonDetails;
 
 public interface PersonDetailsService extends CoreService<PersonDetails>{
 	

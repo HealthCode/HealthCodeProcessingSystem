@@ -1,0 +1,6 @@
+com\healthcode\service\PatientService.class
+com\healthcode\service\PatientServiceImpl.class
+com\healthcode\service\MedicineReminder.class
+com\healthcode\service\HealthCodeGenerator.class
+com\healthcode\service\BaseScheduleReminder.class
+com\healthcode\service\AppointmentReminer.class

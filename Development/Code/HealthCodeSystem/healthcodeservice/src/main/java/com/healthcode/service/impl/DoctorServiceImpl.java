@@ -2,7 +2,7 @@ package com.healthcode.service.impl;
 
 import java.util.Collection;
 
-import com.healthcode.model.Doctor;
+import com.healthcode.entity.Doctor;
 import com.healthcode.service.DoctorService;
 
 

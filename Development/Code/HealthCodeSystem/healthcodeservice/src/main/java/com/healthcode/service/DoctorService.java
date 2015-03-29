@@ -2,7 +2,7 @@ package com.healthcode.service;
 
 import java.util.Collection;
 
-import com.healthcode.model.Doctor;
+import com.healthcode.entity.Doctor;
 
 public interface DoctorService extends CoreService<Doctor>{
 
