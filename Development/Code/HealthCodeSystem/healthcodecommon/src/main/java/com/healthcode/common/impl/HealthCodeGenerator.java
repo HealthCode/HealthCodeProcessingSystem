@@ -6,7 +6,8 @@ import java.util.Map;
 //Sample class that acts like a DB with sequece values for the Name Key
 // Since we can have the key for each name and gender combination
 // We can have key ranging from AA0000 to ZZ9999 for rach AAM to ZZM and AAF to ZZF
-// Total we will get 26*26*2 * 26*26*10000 sequences generated, 9139520000.
+// Total we will get 26*26*2   * 26*26*10000 sequences generated, 9139520000.
+//                   A*A*(M/F) *  A*A * 9999 
 
 class DBMap{
 	
@@ -54,9 +55,9 @@ class SeqHolder{
 
 public class HealthCodeGenerator {
 	
-	private String alphaSeq;
+	private static String alphaSeq;
 	
-	private Integer numSeq;
+	private static Integer numSeq;
 	
 	public HealthCodeGenerator()
 	{
@@ -64,7 +65,7 @@ public class HealthCodeGenerator {
 		numSeq = new Integer(0);
 	}
 	
-	private void getLastSequenceNumber(String keyValue)
+	private static void getLastSequenceNumber(String keyValue)
 	{
 		//Connect to DB and get the Seq for now get it from DBMap
 		
@@ -95,26 +96,36 @@ public class HealthCodeGenerator {
 	
 	}
 	//Sample Health Code : AA1234
-	public String getHealthCode(String keyValue)
+	public static String getHealthCode(String keyValue)
 	{
+		if(keyValue.length() != 3 )
+		{
+			return null;
+		}
+		char x = keyValue.charAt(2);
+		if(keyValue.charAt(2) !='M' && keyValue.charAt(2)!='F')
+		{
+			return null;
+		}
 		getLastSequenceNumber(keyValue);
 		String temp = String.format("%s-%04d", alphaSeq,numSeq);
 		return temp;
 	}
-	public static void main(String args[])
+	/*public static void main(String args[])
 	{
-		HealthCodeGenerator gen = new HealthCodeGenerator();
 		for(int i=0; i< 10; i++)
 		{
-			System.out.println("PBM-"+ gen.getHealthCode("PBM"));
+			System.out.println("PBM-"+ HealthCodeGenerator.getHealthCode("PBM"));
 		}
 		for(int i=0; i< 10; i++)
 		{
-			System.out.println("SDM-"+ gen.getHealthCode("SDM"));
+			System.out.println("SDM-"+ HealthCodeGenerator.getHealthCode("SDM"));
 		}
 		for(int i=0; i< 10; i++)
 		{
-			System.out.println("PBM-" + gen.getHealthCode("PBM"));
+			System.out.println("PBM-" + HealthCodeGenerator.getHealthCode("PBM"));
 		}
-	}
+		System.out.println("PBM-"+ HealthCodeGenerator.getHealthCode("PBD"));
+		System.out.println("PBM-"+ HealthCodeGenerator.getHealthCode("PB"));
+	}*/
 }
