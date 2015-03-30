@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.healthcode.model.Patient;
+import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
 @Controller
@@ -42,7 +42,7 @@ public class PatientController {
 		newPatient.setFirstName(healthCode + " " + "FirstName");
 		newPatient.setLastName(healthCode + " " + "LastName");
 		newPatient.setHealthCode(healthCode);
-		patientService.savePatientDetails(newPatient);
+		//patientService.savePatientDetails(newPatient);
 		return patientMav;
 	}
 	
@@ -53,10 +53,10 @@ public class PatientController {
 	{
 		
 		ModelAndView patientMav = new ModelAndView("patientDetails");
-		Patient patients = patientService.getPatient(healthCode);
+		//Patient patients = patientService.getPatient(healthCode);
 		
-		JSONObject jsonPatient = JSONObject.fromObject(patients);
-		patientMav.addObject("patients", jsonPatient.toString());
+		//JSONObject jsonPatient = JSONObject.fromObject(patients);
+		//patientMav.addObject("patients", jsonPatient.toString());
 		return patientMav;
 	}
 	

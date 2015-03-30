@@ -17,7 +17,7 @@
     <module>healthcodecommon</module>
     <module>healthcodemodel</module>
     <module>healthcodeservice</module>
-    <module>healthcodeweb</module>    
+    <module>healthcodewebapp</module>    
   </modules>
 
   <build>
