@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.healthcode.entity.Patient;
-import com.healthcode.service.PatientService;
+import com.healthcode.service.impl.PatientServiceImpl;
 
 @Controller
 public class PatientController {
 	
 	@Autowired
-	private PatientService patientService;
+	private PatientServiceImpl patientService;
 	
 	@RequestMapping("/allpatients.do")
 	public ModelAndView getAllPatients() throws Exception
@@ -42,7 +42,7 @@ public class PatientController {
 		newPatient.setFirstName(healthCode + " " + "FirstName");
 		newPatient.setLastName(healthCode + " " + "LastName");
 		newPatient.setHealthCode(healthCode);
-		//patientService.savePatientDetails(newPatient);
+		patientService.AddEntry(newPatient);
 		return patientMav;
 	}
 	
@@ -53,10 +53,10 @@ public class PatientController {
 	{
 		
 		ModelAndView patientMav = new ModelAndView("patientDetails");
-		//Patient patients = patientService.getPatient(healthCode);
+		Patient patients = patientService.getEntry(healthCode);
 		
-		//JSONObject jsonPatient = JSONObject.fromObject(patients);
-		//patientMav.addObject("patients", jsonPatient.toString());
+		JSONObject jsonPatient = JSONObject.fromObject(patients);
+		patientMav.addObject("patients", jsonPatient.toString());
 		return patientMav;
 	}
 	

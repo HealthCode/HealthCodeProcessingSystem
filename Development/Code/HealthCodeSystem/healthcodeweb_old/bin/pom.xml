@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.healthcode.system</groupId>
+    <artifactId>HealthCodeSystem</artifactId>
+    <version>0.8-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>healthcodewebapp</artifactId>
+  <packaging>war</packaging>
+  <name>HealthCode Web Module</name>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_2.4_spec</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.healthcode.system</groupId>
+      <artifactId>healthcodemodel</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.healthcode.system</groupId>
+      <artifactId>healthcodecommon</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.healthcode.system</groupId>
+      <artifactId>healthcodeservice</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>healthcodewebapp</finalName>
+	<plugins>
+		<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+        <includes>
+            <include>src/main/java/**/*.java</include>   
+        </includes>
+		<testFailureIgnore>true</testFailureIgnore>
+		</configuration>
+        </plugin>
+	
+		<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-war-plugin</artifactId>
+		<!-- <configuration>
+			<webXml>WebContent\WEB-INF\web.xml</webXml>     
+			<testFailureIgnore>true</testFailureIgnore>			
+		</configuration>-->
+		</plugin>
+		<plugin>
+		  <groupId>org.eclipse.jetty</groupId>
+		  <artifactId>jetty-maven-plugin</artifactId>
+		  <version>9.0.0.v20130308</version> <!-- latest at time of writing -->
+		  <configuration>
+        <!--<webAppSourceDirectory>${project.basedir}/src/staticfiles</webAppSourceDirectory> -->
+        <webApp>
+          <contextPath>/</contextPath>
+          <descriptor>${project.basedir}\WebContent\WEB-INF\web.xml</descriptor>
+          <!--<jettyEnvXml>${project.basedir}/src/over/here/jetty-env.xml</jettyEnvXml> -->
+        </webApp>
+        <!--<classesDirectory>${project.basedir}/somewhere/else</classesDirectory>
+        <scanTargets>
+          <scanTarget>src/mydir</scanTarget>
+          <scanTarget>src/myfile.txt</scanTarget>
+        </scanTargets>
+        <scanTargetPatterns>
+          <scanTargetPattern>
+            <directory>src/other-resources</directory>
+            <includes>
+              <include>**/*.xml</include>
+              <include>**/*.properties</include>
+            </includes>
+            <excludes>
+              <exclude>**/myspecial.xml</exclude>
+              <exclude>**/myspecial.properties</exclude>
+            </excludes>
+          </scanTargetPattern>
+        </scanTargetPatterns>-->
+      </configuration>
+
+
+        </plugin>
+    </plugins>
+  </build>
+
+ 
+ 
+ </project>
