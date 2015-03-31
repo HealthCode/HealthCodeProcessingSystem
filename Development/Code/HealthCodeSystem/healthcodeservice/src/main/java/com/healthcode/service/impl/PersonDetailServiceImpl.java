@@ -2,12 +2,14 @@ package com.healthcode.service.impl;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Component;
+
 import com.healthcode.entity.Patient;
 import com.healthcode.entity.PersonDetails;
 import com.healthcode.service.PatientService;
 import com.healthcode.service.PersonDetailsService;
 
-@component
+@Component
 public class PersonDetailServiceImpl extends CoreServiceImpl<PersonDetails> implements PersonDetailsService{
 
 	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
