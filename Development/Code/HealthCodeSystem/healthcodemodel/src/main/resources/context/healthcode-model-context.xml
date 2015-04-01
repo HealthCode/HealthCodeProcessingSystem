@@ -8,8 +8,9 @@
 	http://www.springframework.org/schema/data/mongo
 	http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
-	<context:component-scan base-package="com.healthcode.dao.patient" />
-	<context:component-scan base-package="com.healthcode.model.patient"/>
+	<context:component-scan base-package="com.healthcode.dao" />
+	<context:component-scan base-package="com.healthcode.dao.impl" />
+	<context:component-scan base-package="com.healthcode.entity"/>
 	<context:annotation-config />
 
 	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">

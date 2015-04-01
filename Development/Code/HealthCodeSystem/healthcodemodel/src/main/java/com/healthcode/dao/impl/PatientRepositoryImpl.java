@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Repository;
 import com.healthcode.dao.Constants;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.PersonInterface;
+
 import com.healthcode.entity.Patient;
 import com.healthcode.entity.PersonDetails;
 

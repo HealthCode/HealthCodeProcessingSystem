@@ -3,8 +3,11 @@ package com.healthcode.service.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.healthcode.service.CoreService;
 
+@Service
 public class CoreServiceImpl<T> implements CoreService<T>{
 
 	public void AddEntry(T entryDetails) throws Exception {

@@ -8,6 +8,7 @@
 	http://www.springframework.org/schema/data/mongo
 	http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
+    <context:component-scan base-package="com.healthcode.service" />
 	<context:component-scan base-package="com.healthcode.service.impl" />
 	<context:annotation-config />
 

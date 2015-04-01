@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 
 import org.springframework.stereotype.Service;
 
 import com.healthcode.dao.PatientRepository;
+import com.healthcode.dao.impl.PatientRepositoryImpl;
 import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
@@ -18,7 +18,7 @@ import com.healthcode.service.PatientService;
 public class PatientServiceImpl extends CoreServiceImpl<Patient> implements PatientService{
 	
 	@Autowired
-	private PatientRepository patientRepository;
+	private PatientRepositoryImpl patientRepository;
 
 	public List<Patient> getAllPatients() throws Exception {
 		return patientRepository.findAll();

@@ -5,7 +5,10 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.healthcode.entity.Patient;
+
 
 public interface PatientService extends CoreService<Patient>{
 	
