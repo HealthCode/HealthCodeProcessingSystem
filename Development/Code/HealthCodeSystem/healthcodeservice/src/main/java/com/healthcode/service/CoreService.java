@@ -3,6 +3,9 @@ package com.healthcode.service;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface CoreService<T> {
 	
 	/**

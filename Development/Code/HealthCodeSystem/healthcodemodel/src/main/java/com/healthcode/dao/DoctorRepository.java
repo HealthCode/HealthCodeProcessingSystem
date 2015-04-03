@@ -14,7 +14,7 @@ import com.healthcode.entity.Patient;
  *	queries provided by MongoDB and custom queries defined in CustomPatientRepository
  *
  */
-@Repository
+
 public interface DoctorRepository extends PersonInterface<Doctor>{
 	
 	Collection<Doctor> getDoctorsBySpecilization(String specilization);

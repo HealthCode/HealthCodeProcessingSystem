@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import com.healthcode.dao.PatientDao;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.impl.PatientRepositoryImpl;
 import com.healthcode.entity.Patient;
@@ -18,7 +19,7 @@ import com.healthcode.service.PatientService;
 public class PatientServiceImpl extends CoreServiceImpl<Patient> implements PatientService{
 	
 	@Autowired
-	private PatientRepositoryImpl patientRepository;
+	private PatientDao patientRepository;
 
 	public List<Patient> getAllPatients() throws Exception {
 		return patientRepository.findAll();
@@ -26,27 +27,32 @@ public class PatientServiceImpl extends CoreServiceImpl<Patient> implements Pati
 
 	public Collection<Patient> getPatientsByCity(String cityName) {
 		// TODO Auto-generated method stub
+		patientRepository.getPersonByCity(cityName);
 		return null;
 	}
 
 	public Collection<Patient> getPersonByAgeRange(Integer start, Integer end) {
 		// TODO Auto-generated method stub
+		patientRepository.getPersonByAgeRange(start, end);
 		return null;
 	}
 
 	public Collection<Patient> getPersonByGender(String gender) {
 		// TODO Auto-generated method stub
+		patientRepository.getPersonByGender(gender);
 		return null;
 	}
 
 	public Collection<Patient> getPersonByGenderAndAge(String geneder,
 			Integer start, Integer end) {
 		// TODO Auto-generated method stub
+		patientRepository.getPersonByGenderAndAge(geneder, start, end);
 		return null;
 	}
 
 	public Collection<Patient> getPersonByDisease(String diseaseName) {
 		// TODO Auto-generated method stub
+		patientRepository.getPersonByDisease(diseaseName);
 		return null;
 	}
 

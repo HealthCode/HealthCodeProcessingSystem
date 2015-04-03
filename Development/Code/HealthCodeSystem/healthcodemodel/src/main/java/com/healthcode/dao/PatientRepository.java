@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 
 import com.healthcode.entity.Patient;
+import com.healthcode.entity.PersonDetails;
 
 /**
  *
@@ -15,7 +16,7 @@ import com.healthcode.entity.Patient;
  *	queries provided by MongoDB and custom queries defined in CustomPatientRepository
  *
  */
-@Repository
+
 public interface PatientRepository extends PersonInterface<Patient>{
 	
 	Collection<Patient> getPersonByDisease(String diseaseName);

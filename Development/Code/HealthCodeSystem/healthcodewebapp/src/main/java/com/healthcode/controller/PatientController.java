@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.healthcode.entity.Patient;
-import com.healthcode.service.impl.PatientServiceImpl;
+import com.healthcode.service.PatientService;
 
 @Controller
 public class PatientController {
 	
 	@Autowired
-	private PatientServiceImpl patientService;
+	private PatientService patientService;
 	
 	@RequestMapping("/allpatients.do")
 	public ModelAndView getAllPatients() throws Exception

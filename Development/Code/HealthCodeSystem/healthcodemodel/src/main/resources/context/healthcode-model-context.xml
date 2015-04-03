@@ -18,10 +18,28 @@
 			<property name="port" value="27017" />
 	</bean>
 
-	<bean id="mongoTemplate" name="mongaDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
+	<bean id="mongoTemplate" name="mongoDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
 			<constructor-arg name="mongo" ref="mongoDB" />
 			<constructor-arg name="databaseName" value="HealthCodeDB" />
 	</bean>
+	
+		<bean id="mongoOp"  class="org.springframework.data.mongodb.core.MongoOperations">
+			<property name="mongoOp" ref="mongoDbInstance" />
+	</bean>
+	
+	<!-- ds061308.mongolab.com:61308/hcprjdb01  -->
+	<!-- 
+<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+			<property name="host" value="ds061308.mongolab.com" />
+			<property name="port" value="61308" />
+	</bean>
+
+	<bean id="mongoTemplate" name="mongoDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
+			<constructor-arg name="mongo" ref="mongoDB" />
+			<constructor-arg name="databaseName" value="hcprjdb01" />
+	</bean>
+	
+		-->
 	<mongo:repositories base-package="com.healthcode.dao.patient" />
 	
 </beans>	

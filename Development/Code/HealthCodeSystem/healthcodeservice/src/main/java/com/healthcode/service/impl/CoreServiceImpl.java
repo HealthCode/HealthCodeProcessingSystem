@@ -3,16 +3,23 @@ package com.healthcode.service.impl;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.healthcode.dao.GenericDao;
+import com.healthcode.dao.impl.BaseRepositoryImpl;
+import com.healthcode.dao.impl.PatientRepositoryImpl;
 import com.healthcode.service.CoreService;
 
 @Service
 public class CoreServiceImpl<T> implements CoreService<T>{
 
+	@Autowired
+	GenericDao<T> dao;
+	
 	public void AddEntry(T entryDetails) throws Exception {
-		// TODO Auto-generated method stub
-		
+
+		dao.save(entryDetails);
 	}
 
 	public void AddEntries(List<T> entries) throws Exception {
@@ -21,7 +28,7 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public void DeleteEntry(T entryDetails) throws Exception {
-		// TODO Auto-generated method stub
+		dao.delete(entryDetails);
 		
 	}
 
@@ -31,8 +38,7 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public T getEntry(String key) {
-		// TODO Auto-generated method stub
-		return null;
+		return (T) dao.findOne(key);
 	}
 
 	public Collection<T> getEntries(Collection<String> keys) {
@@ -41,7 +47,7 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public void updateEntry(String key, T entryDetails) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

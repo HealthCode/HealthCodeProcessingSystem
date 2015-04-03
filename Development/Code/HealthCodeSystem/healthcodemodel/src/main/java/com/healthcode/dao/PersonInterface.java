@@ -3,10 +3,12 @@ package com.healthcode.dao;
 import java.util.Collection;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import com.healthcode.entity.PersonDetails;
 
-public interface PersonInterface<T>  extends MongoRepository<T, String>{
+@Repository
+public interface PersonInterface<T>{
 
 	T getPersonByHealthCode(String healthCode);
 	

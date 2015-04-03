@@ -1,6 +1,9 @@
 package com.healthcode.entity;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection="Person_Details")
 public class PersonDetails extends ModelEntity{
 
 	private String firstName;
