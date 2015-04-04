@@ -18,6 +18,7 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	GenericDao<T> dao;
 	
 	public void AddEntry(T entryDetails) throws Exception {
+     System.out.println("We are about to save the data");
 
 		dao.save(entryDetails);
 	}

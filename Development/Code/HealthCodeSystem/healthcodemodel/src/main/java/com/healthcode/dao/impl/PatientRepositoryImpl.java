@@ -15,6 +15,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.healthcode.dao.Constants;
+import com.healthcode.dao.GenericDao;
+import com.healthcode.dao.PatientDao;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.PersonInterface;
 
@@ -26,7 +28,9 @@ import com.healthcode.entity.PersonDetails;
 @Repository
 public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implements PatientRepository {
 
-
+	@Autowired
+	private MongoTemplate mongoTemplate;
+	
 	@Override
 	public Collection<Patient> getPersonByDisease(String diseaseName) {
 		// TODO Auto-generated method stub
@@ -34,6 +38,9 @@ public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implemen
 	}
 
 	public Patient getPersonByHealthCode(String healthCode) {
+		
+		MongoOperations mongoOp = (MongoOperations) mongoTemplate;
+		
 		//Query 'Patient' collection by Health Code
 		Query searchPatientbyHealthCode = new Query(Criteria
 								.where(Constants.HEALTHCODE)
@@ -42,6 +49,7 @@ public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implemen
 		
 		return patient;
 	}
+
 
 	
 	

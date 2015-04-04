@@ -43,6 +43,8 @@ public class PatientController {
 		newPatient.setLastName(healthCode + " " + "LastName");
 		newPatient.setHealthCode(healthCode);
 		patientService.AddEntry(newPatient);
+		JSONObject jsonPatient = JSONObject.fromObject(newPatient);
+		patientMav.addObject("patients", jsonPatient.toString());
 		return patientMav;
 	}
 	

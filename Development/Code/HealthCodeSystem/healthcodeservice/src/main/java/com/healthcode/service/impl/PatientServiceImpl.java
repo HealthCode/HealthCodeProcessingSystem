@@ -21,6 +21,19 @@ public class PatientServiceImpl extends CoreServiceImpl<Patient> implements Pati
 	@Autowired
 	private PatientDao patientRepository;
 
+	@Override
+	public void AddEntry(Patient entryDetails) throws Exception {
+	     System.out.println("We are about to save the data");
+
+	     patientRepository.save(entryDetails);
+		}
+	
+	public Patient getEntry(String key) {
+		return  patientRepository.getPersonByHealthCode(key);
+	}
+
+	
+	@Override
 	public List<Patient> getAllPatients() throws Exception {
 		return patientRepository.findAll();
 	}
@@ -30,13 +43,13 @@ public class PatientServiceImpl extends CoreServiceImpl<Patient> implements Pati
 		patientRepository.getPersonByCity(cityName);
 		return null;
 	}
-
+	
 	public Collection<Patient> getPersonByAgeRange(Integer start, Integer end) {
 		// TODO Auto-generated method stub
 		patientRepository.getPersonByAgeRange(start, end);
 		return null;
 	}
-
+	
 	public Collection<Patient> getPersonByGender(String gender) {
 		// TODO Auto-generated method stub
 		patientRepository.getPersonByGender(gender);

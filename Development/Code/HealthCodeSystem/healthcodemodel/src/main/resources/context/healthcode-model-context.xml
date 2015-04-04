@@ -29,7 +29,7 @@
 	
 	<!-- ds061308.mongolab.com:61308/hcprjdb01  -->
 	<!-- 
-<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
 			<property name="host" value="ds061308.mongolab.com" />
 			<property name="port" value="61308" />
 	</bean>

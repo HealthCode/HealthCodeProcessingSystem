@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.healthcode.dao.PatientDao;
 import com.healthcode.entity.Patient;
 
-
+@Service
 public interface PatientService extends CoreService<Patient>{
 	
 	/**
