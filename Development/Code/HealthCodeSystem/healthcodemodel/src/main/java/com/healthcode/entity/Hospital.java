@@ -13,7 +13,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document(collection="Hospital_Details")
-
 public class Hospital extends ModelEntity {
 
 	

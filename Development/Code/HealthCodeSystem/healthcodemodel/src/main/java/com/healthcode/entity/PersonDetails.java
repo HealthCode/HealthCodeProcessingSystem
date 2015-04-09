@@ -6,12 +6,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="Person_Details")
 public class PersonDetails extends ModelEntity{
 
+	
 	private String firstName;
 	private String lastName;
-	private String healthCode;
+	private String code;
 	private String age;
 	private String gender;
-	private Address address;
+	protected Address address;
 	private ContactInfo contacts;
 	private String groupId;
 	
@@ -28,10 +29,10 @@ public class PersonDetails extends ModelEntity{
 		this.lastName = lastName;
 	}
 	public String getHealthCode() {
-		return healthCode;
+		return code;
 	}
 	public void setHealthCode(String healthCode) {
-		this.healthCode = healthCode;
+		this.code = healthCode;
 	}
 	public String getAge() {
 		return age;

@@ -6,7 +6,7 @@ import java.util.Collection;
 
 import com.healthcode.entity.Hospital;
 
-public interface HospitalRepository extends MongoRepository<Hospital, String>, MedicalUnitInterface{
+public interface HospitalRepository { //extends MongoRepository<Hospital, String>, MedicalUnitInterface{
 	
 	Collection<Hospital> getHospitalsBySpecilizations(String specilization);
 	

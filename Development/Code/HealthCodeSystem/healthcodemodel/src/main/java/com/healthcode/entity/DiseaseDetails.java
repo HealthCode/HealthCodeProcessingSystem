@@ -1,5 +1,8 @@
 package com.healthcode.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="Disease_Details")
 public class DiseaseDetails {
 	
 	private String diseaseName;

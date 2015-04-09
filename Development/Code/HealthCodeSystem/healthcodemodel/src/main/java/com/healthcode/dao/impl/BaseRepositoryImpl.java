@@ -41,13 +41,13 @@ public abstract class BaseRepositoryImpl<T> implements PersonInterface<T>{
 
 
 	@Override
-	public Collection<T> getPersonByCity(String cityName) {
+	public Collection<T> getPersonByAddressCity(String cityName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<T> getPersonByAgeRange(Integer start, Integer end) {
+	public Collection<T> getPersonByAge(Integer start, Integer end) {
 		// TODO Auto-generated method stub
 		return null;
 	}

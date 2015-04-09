@@ -6,20 +6,25 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Component;
 
 import com.healthcode.entity.Patient;
-import com.healthcode.service.PatientService;
+import com.healthcode.service.OldPatientService;
 
-//@Controller
-public class PatientController {
+
+@Controller
+public class OldPatientController {
 	
-/*	@Autowired
-	private PatientService patientService;
+	
+	@Autowired
+	public OldPatientService patientService;
+	
 	
 	@RequestMapping("/allpatients.do")
 	public ModelAndView getAllPatients() throws Exception
@@ -39,12 +44,10 @@ public class PatientController {
 	{
 		ModelAndView patientMav = new ModelAndView("patientDetails");
 		Patient newPatient = new Patient();
-		newPatient.setFirstName(healthCode + " " + "FirstName");
-		newPatient.setLastName(healthCode + " " + "LastName");
 		newPatient.setHealthCode(healthCode);
-		patientService.AddEntry(newPatient);
-		JSONObject jsonPatient = JSONObject.fromObject(newPatient);
-		patientMav.addObject("patients", jsonPatient.toString());
+		patientService.savePatientDetails(newPatient);
+		//patientService.AddEntry(newPatient);
+		
 		return patientMav;
 	}
 	
@@ -55,11 +58,12 @@ public class PatientController {
 	{
 		
 		ModelAndView patientMav = new ModelAndView("patientDetails");
-		Patient patients = patientService.getEntry(healthCode);
+		Patient patients = patientService.getPatient(healthCode);
+		//Patient patients = patientService.getEntry(healthCode);
 		
 		JSONObject jsonPatient = JSONObject.fromObject(patients);
 		patientMav.addObject("patients", jsonPatient.toString());
 		return patientMav;
 	}
-	*/
+	
 }

@@ -6,22 +6,13 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
-import com.healthcode.dao.PatientDao;
 import com.healthcode.entity.Patient;
 
-@Service
-public interface PatientService extends CoreService<Patient>{
-	
-	/**
-	 * 
-	 * Gets the details of all the patients, Why need this kind of service??? TODO: Task
-	 * @param List of keys
-	 * @return Patients
-	 * @throws Exception
-	 */
 
-	public List<Patient> getAllPatients() throws Exception;
+public interface PatientService { //extends CoreService<Patient>{
+	
+	
+	//public List<Patient> getAllPatients() throws Exception;
 	
 	public Collection<Patient> getPatientsByCity(final String cityName);
 	

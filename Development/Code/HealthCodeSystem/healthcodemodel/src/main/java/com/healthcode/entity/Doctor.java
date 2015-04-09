@@ -20,8 +20,8 @@ public class Doctor extends PersonDetails{
 	private String registrationCode;
 	private String diploma;
 	private String board;
-	private List<String> specilizations;
-	private List<String> Hospitals;
+	private List<String> specilization;
+	private List<String> Hospital;
 	private Double fee;
 	private Boolean isActive;
 	//Self description of the doctor about his background and history.
@@ -29,6 +29,7 @@ public class Doctor extends PersonDetails{
 	private Integer appointmentDuration;
 	private Integer advanceBookingDays;
 	private Integer yearsOfExp;
+	private int rating;
 	
 	
 	public String getRegistrationCode() {
@@ -44,17 +45,17 @@ public class Doctor extends PersonDetails{
 		this.doctorCode = doctorCode;
 	}
 	
-	public List<String> getSpecilizations() {
-		return specilizations;
+	public List<String> getSpecilization() {
+		return specilization;
 	}
-	public void setSpecilizations(List<String> specilizations) {
-		this.specilizations = specilizations;
+	public void setSpecilization(List<String> specilizations) {
+		this.specilization = specilizations;
 	}
-	public List<String> getHospitals() {
-		return Hospitals;
+	public List<String> getHospital() {
+		return Hospital;
 	}
-	public void setHospitals(List<String> hospitals) {
-		Hospitals = hospitals;
+	public void setHospital(List<String> hospitals) {
+		Hospital = hospitals;
 	}
 	public Double getFee() {
 		return fee;

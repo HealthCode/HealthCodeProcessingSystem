@@ -11,6 +11,7 @@
 	<context:component-scan base-package="com.healthcode.dao" />
 	<context:component-scan base-package="com.healthcode.dao.impl" />
 	<context:component-scan base-package="com.healthcode.entity"/>
+	<context:component-scan base-package="org.springframework.data.mongodb.core.MongoTemplate"/>
 	<context:annotation-config />
 
 	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
@@ -23,9 +24,12 @@
 			<constructor-arg name="databaseName" value="HealthCodeDB" />
 	</bean>
 	
-		<bean id="mongoOp"  class="org.springframework.data.mongodb.core.MongoOperations">
+		<!-- bean id="mongoOp"  class="org.springframework.data.mongodb.core.MongoOperations">
 			<property name="mongoOp" ref="mongoDbInstance" />
-	</bean>
+	</bean-->
+	
+		<!-- bean id="OldPatientRepositoryImpl" class="com.healthcode.dao.impl.OldPatientRepositoryImpl"></bean>
+		<bean id="OldPatientRepository" class="com.healthcode.dao.OldPatientRepository"></bean-->
 	
 	<!-- ds061308.mongolab.com:61308/hcprjdb01  -->
 	<!-- 
@@ -40,6 +44,6 @@
 	</bean>
 	
 		-->
-	<mongo:repositories base-package="com.healthcode.dao.patient" />
+	<mongo:repositories base-package="com.healthcode.dao" />
 	
 </beans>	

@@ -14,13 +14,13 @@ import com.healthcode.service.CoreService;
 @Service
 public class CoreServiceImpl<T> implements CoreService<T>{
 
-	@Autowired
-	GenericDao<T> dao;
+//	@Autowired
+//	GenericDao<T> dao;
 	
 	public void AddEntry(T entryDetails) throws Exception {
      System.out.println("We are about to save the data");
 
-		dao.save(entryDetails);
+		//dao.save(entryDetails);
 	}
 
 	public void AddEntries(List<T> entries) throws Exception {
@@ -29,7 +29,7 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public void DeleteEntry(T entryDetails) throws Exception {
-		dao.delete(entryDetails);
+		//dao.delete(entryDetails);
 		
 	}
 
@@ -39,7 +39,8 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public T getEntry(String key) {
-		return (T) dao.findOne(key);
+		//return (T) dao.findOne(key);
+		return null;
 	}
 
 	public Collection<T> getEntries(Collection<String> keys) {

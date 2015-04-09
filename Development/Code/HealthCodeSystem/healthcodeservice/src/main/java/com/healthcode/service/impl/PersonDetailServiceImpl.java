@@ -9,15 +9,16 @@ import com.healthcode.entity.PersonDetails;
 import com.healthcode.service.PatientService;
 import com.healthcode.service.PersonDetailsService;
 
+
 @Component
 public class PersonDetailServiceImpl extends CoreServiceImpl<PersonDetails> implements PersonDetailsService{
 
-	@Override
-	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
-			Integer end) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
+//			Integer end) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 	@Override
 	public Collection<PersonDetails> getPersonByGender(String gender) {
 		// TODO Auto-generated method stub

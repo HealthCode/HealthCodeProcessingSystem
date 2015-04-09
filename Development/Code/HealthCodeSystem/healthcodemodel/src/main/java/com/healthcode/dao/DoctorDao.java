@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.healthcode.entity.Doctor;
 
-@Repository
+
 public interface DoctorDao  extends DoctorRepository, MongoRepository<Doctor, String> {
 
 }

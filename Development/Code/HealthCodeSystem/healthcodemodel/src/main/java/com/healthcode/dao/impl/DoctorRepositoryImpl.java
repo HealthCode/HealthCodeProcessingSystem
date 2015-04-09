@@ -31,26 +31,26 @@ public class DoctorRepositoryImpl extends BaseRepositoryImpl<Doctor> implements 
 	}
 
 	@Override
-	public Collection<Doctor> getDoctorsBySpecilization(String specilization) {
+	public Collection<Doctor> getAllDoctorsBySpecilization(String specilization) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<Doctor> getDoctorsByArea(String area) {
+	public Collection<Doctor> getAllDoctorsByAddressCity(String area) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<Doctor> getDoctorsByRating(String specilization,
+	public Collection<Doctor> getAllDoctorsByRating(String specilization,
 			String rating) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Collection<Doctor> getDoctorsByHospital(String hospitalName) {
+	public Collection<Doctor> getAllDoctorsByHospital(String hospitalName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

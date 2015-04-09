@@ -17,13 +17,13 @@ import com.healthcode.entity.Patient;
 
 public interface DoctorRepository extends PersonInterface<Doctor>{
 	
-	Collection<Doctor> getDoctorsBySpecilization(String specilization);
+	Collection<Doctor> getAllDoctorsBySpecilization(String specilization);
 	
-	Collection<Doctor> getDoctorsByArea(String area);
+	Collection<Doctor> getAllDoctorsByAddressCity(String area);
 	
-	Collection<Doctor> getDoctorsByRating(String specilization,String rating);
+	Collection<Doctor> getAllDoctorsByRating(String specilization,String rating);
 	
-	Collection<Doctor> getDoctorsByHospital(String hospitalName);
+	Collection<Doctor> getAllDoctorsByHospital(String hospitalName);
 }
 
 

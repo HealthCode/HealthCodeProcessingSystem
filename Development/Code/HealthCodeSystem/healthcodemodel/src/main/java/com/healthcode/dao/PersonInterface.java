@@ -7,14 +7,14 @@ import org.springframework.stereotype.Repository;
 
 import com.healthcode.entity.PersonDetails;
 
-@Repository
+
 public interface PersonInterface<T>{
 
 	T getPersonByHealthCode(String healthCode);
 	
-	Collection<T> getPersonByCity(String cityName);
+	Collection<T> getPersonByAddressCity(String cityName);
 	
-	Collection<T> getPersonByAgeRange(Integer start, Integer end);
+	Collection<T> getPersonByAge(Integer start, Integer end);
 	
 	Collection<T> getPersonByGender(String gender);
 	

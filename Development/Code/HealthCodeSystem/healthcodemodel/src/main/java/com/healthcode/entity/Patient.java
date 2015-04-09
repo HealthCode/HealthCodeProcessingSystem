@@ -7,9 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="Patient_Details")
-public class Patient extends PersonDetails {
+public class Patient  extends PersonDetails{
 
-	private Collection<DiseaseDetails> diseases = null;
+	private String healthCode;
+	private Collection<DiseaseDetails> disease = null;
 	
 	public Patient(){
 		

@@ -11,5 +11,7 @@
     <context:component-scan base-package="com.healthcode.service" />
 	<context:component-scan base-package="com.healthcode.service.impl" />
 	<context:annotation-config />
-
+	    
+	<!-- bean id="OldPatientServiceImpl" class="com.healthcode.service.impl.OldPatientServiceImpl"></bean>
+	<bean id="OldPatientService" class="com.healthcode.service.OldPatientService"></bean-->
 </beans>	
