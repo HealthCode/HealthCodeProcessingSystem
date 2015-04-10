@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.healthcode.entity.Patient;
 
 
-@Repository
+@Repository(value ="Old")
 public class OldPatientRepositoryImpl implements CustomPatientRepository {
 @Autowired
 private MongoTemplate mongoTemplate;

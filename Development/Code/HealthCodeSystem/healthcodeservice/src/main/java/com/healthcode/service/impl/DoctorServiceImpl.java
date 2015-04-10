@@ -2,11 +2,12 @@ package com.healthcode.service.impl;
 
 import java.util.Collection;
 
+import com.healthcode.dao.DoctorDao;
 import com.healthcode.entity.Doctor;
 import com.healthcode.service.DoctorService;
 
 
-public class DoctorServiceImpl extends CoreServiceImpl<Doctor> implements DoctorService{
+public class DoctorServiceImpl extends CoreServiceImpl<Doctor,DoctorDao> implements DoctorService{
 
 	public Collection<Doctor> getDoctorsBySpecilization(String specilization) {
 		// TODO Auto-generated method stub

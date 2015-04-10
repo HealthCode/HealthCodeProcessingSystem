@@ -10,7 +10,7 @@ import com.healthcode.dao.PersonInterface;
 
 
 @Repository
-public abstract class BaseRepositoryImpl<T> implements PersonInterface<T>{
+public class BaseRepositoryImpl<T> implements PersonInterface<T>{
 
 	@Autowired
 	private MongoTemplate mongoDBInstance;
@@ -61,6 +61,12 @@ public abstract class BaseRepositoryImpl<T> implements PersonInterface<T>{
 	@Override
 	public Collection<T> getPersonByGenderAndAge(String geneder, Integer start,
 			Integer end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T getPersonByHealthCode(String healthCode) {
 		// TODO Auto-generated method stub
 		return null;
 	}

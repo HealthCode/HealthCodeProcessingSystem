@@ -16,6 +16,7 @@ import com.healthcode.entity.Patient;
 public class OldPatientServiceImpl implements OldPatientService{
 	
 	@Autowired
+	@Qualifier("Old")
 	public OldPatientRepository patientRepository;
 	
 	@Override

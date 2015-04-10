@@ -2,6 +2,7 @@ package com.healthcode.service.impl;
 
 import java.util.Collection;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Component;
 
 import com.healthcode.entity.Patient;
@@ -11,14 +12,14 @@ import com.healthcode.service.PersonDetailsService;
 
 
 @Component
-public class PersonDetailServiceImpl extends CoreServiceImpl<PersonDetails> implements PersonDetailsService{
+public class PersonDetailServiceImpl<T extends PersonDetails,R extends MongoRepository<T, String>> extends CoreServiceImpl<T,R> implements PersonDetailsService<T>{
 
-//	@Override
-//	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
-//			Integer end) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	@Override
+	public Collection<PersonDetails> getPersonByAgeRange(Integer start,
+			Integer end) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	@Override
 	public Collection<PersonDetails> getPersonByGender(String gender) {
 		// TODO Auto-generated method stub

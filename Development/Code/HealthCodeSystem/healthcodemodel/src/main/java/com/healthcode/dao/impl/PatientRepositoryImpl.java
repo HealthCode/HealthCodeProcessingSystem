@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.healthcode.dao.Constants;
-import com.healthcode.dao.GenericDao;
+
 import com.healthcode.dao.PatientDao;
 import com.healthcode.dao.PatientRepository;
 import com.healthcode.dao.PersonInterface;
@@ -25,7 +26,7 @@ import com.healthcode.entity.Patient;
 import com.healthcode.entity.PersonDetails;
 
 
-@Repository
+@Repository(value = "Patient")
 public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implements PatientRepository {
 
 	@Autowired
@@ -45,7 +46,7 @@ public class PatientRepositoryImpl  extends BaseRepositoryImpl<Patient> implemen
 		Query searchPatientbyHealthCode = new Query(Criteria
 								.where(Constants.HEALTHCODE)
 								.is(healthCode)); 
-		Patient patient = getMongoOp().findOne(searchPatientbyHealthCode,Patient.class); 
+		Patient patient = mongoOp.findOne(searchPatientbyHealthCode,Patient.class); 
 		
 		return patient;
 	}

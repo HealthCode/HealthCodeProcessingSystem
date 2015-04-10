@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import com.healthcode.entity.Patient;
 
 
-public interface PatientService { //extends CoreService<Patient>{
+public interface PatientService extends CoreService<Patient>{
 	
 	
-	//public List<Patient> getAllPatients() throws Exception;
+	public List<Patient> getAllPatients() throws Exception;
 	
 	public Collection<Patient> getPatientsByCity(final String cityName);
 	

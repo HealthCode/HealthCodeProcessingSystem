@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import org.springframework.stereotype.Service;
 
@@ -17,9 +18,12 @@ import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
 @Service
-public class PatientServiceImpl extends CoreServiceImpl<Patient> implements PatientService{
+@Qualifier("New")
+//public class PatientServiceImpl extends CoreServiceImpl<Patient,PatientDao> implements PatientService{
+public class PatientServiceImpl extends PersonDetailServiceImpl<Patient,PatientDao> implements PatientService{
 	
 	@Autowired
+	@Qualifier("Patient")
 	private PatientDao patientRepository;
 
 	@Override
@@ -34,10 +38,10 @@ public class PatientServiceImpl extends CoreServiceImpl<Patient> implements Pati
 	}
 
 	
-//	@Override
-//	public List<Patient> getAllPatients() throws Exception {
-//		return patientRepository.findAll();
-//	}
+	@Override
+	public List<Patient> getAllPatients() throws Exception {
+		return patientRepository.findAll();
+	}
 
 	public Collection<Patient> getPatientsByCity(String cityName) {
 		// TODO Auto-generated method stub
@@ -51,18 +55,7 @@ public class PatientServiceImpl extends CoreServiceImpl<Patient> implements Pati
 //		return null;
 //	}
 	
-	public Collection<Patient> getPersonByGender(String gender) {
-		// TODO Auto-generated method stub
-		patientRepository.getPersonByGender(gender);
-		return null;
-	}
 
-	public Collection<Patient> getPersonByGenderAndAge(String geneder,
-			Integer start, Integer end) {
-		// TODO Auto-generated method stub
-		patientRepository.getPersonByGenderAndAge(geneder, start, end);
-		return null;
-	}
 
 	public Collection<Patient> getPersonByDisease(String diseaseName) {
 		// TODO Auto-generated method stub

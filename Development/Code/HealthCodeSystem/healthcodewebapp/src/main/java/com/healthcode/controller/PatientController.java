@@ -15,13 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
-//@Controller
+@Controller
 public class PatientController {
 	
-/*	@Autowired
+	@Autowired
 	private PatientService patientService;
 	
-	@RequestMapping("/allpatients.do")
+	@RequestMapping("new/allpatients.do")
 	public ModelAndView getAllPatients() throws Exception
 	{
 		ModelAndView patientMav = new ModelAndView("patientDetails");
@@ -32,7 +32,7 @@ public class PatientController {
 		return patientMav;
 	}
 	
-	@RequestMapping(value = "/savepatientdetails.do",
+	@RequestMapping(value = "new/savepatientdetails.do",
 					method = {RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView savePersonDetails(@RequestParam(value = "healthCode", required=false)
 											String healthCode) throws Exception
@@ -48,7 +48,7 @@ public class PatientController {
 		return patientMav;
 	}
 	
-	@RequestMapping(value = "/getpatient.do",
+	@RequestMapping(value = "new/getpatient.do",
 					method = {RequestMethod.GET})
 	public ModelAndView getPatient(@RequestParam(value = "healthCode", required=false)
 									String healthCode)	throws Exception
@@ -61,5 +61,5 @@ public class PatientController {
 		patientMav.addObject("patients", jsonPatient.toString());
 		return patientMav;
 	}
-	*/
+	
 }

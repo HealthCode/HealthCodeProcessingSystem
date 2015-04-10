@@ -4,23 +4,25 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Service;
 
-import com.healthcode.dao.GenericDao;
 import com.healthcode.dao.impl.BaseRepositoryImpl;
 import com.healthcode.dao.impl.PatientRepositoryImpl;
 import com.healthcode.service.CoreService;
 
 @Service
-public class CoreServiceImpl<T> implements CoreService<T>{
+public class CoreServiceImpl<T,Repository extends MongoRepository<T, String>> implements CoreService<T>{
 
-//	@Autowired
-//	GenericDao<T> dao;
+	@Autowired
+	@Qualifier("Patient") //TODO : Why patient
+	private Repository dao;
 	
 	public void AddEntry(T entryDetails) throws Exception {
      System.out.println("We are about to save the data");
 
-		//dao.save(entryDetails);
+		dao.save(entryDetails);
 	}
 
 	public void AddEntries(List<T> entries) throws Exception {
@@ -29,18 +31,17 @@ public class CoreServiceImpl<T> implements CoreService<T>{
 	}
 
 	public void DeleteEntry(T entryDetails) throws Exception {
-		//dao.delete(entryDetails);
+		dao.delete(entryDetails);
 		
 	}
 
 	public void DeleteEntries(List<T> entries) throws Exception {
-		// TODO Auto-generated method stub
+		 //TODO Auto-generated method stub
 		
 	}
 
 	public T getEntry(String key) {
-		//return (T) dao.findOne(key);
-		return null;
+		return (T) dao.findOne(key);
 	}
 
 	public Collection<T> getEntries(Collection<String> keys) {

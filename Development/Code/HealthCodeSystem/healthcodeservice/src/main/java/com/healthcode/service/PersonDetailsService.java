@@ -7,9 +7,9 @@ import com.healthcode.entity.ContactInfo;
 import com.healthcode.entity.Patient;
 import com.healthcode.entity.PersonDetails;
 
-public interface PersonDetailsService extends CoreService<PersonDetails>{
+public interface PersonDetailsService<T extends PersonDetails> extends CoreService<T>{
 	
-	//Collection<PersonDetails> getPersonByAgeRange(Integer start, Integer end);
+	Collection<PersonDetails> getPersonByAgeRange(Integer start, Integer end);
 	
 	Collection<PersonDetails> getPersonByGender(String gender);
 	
