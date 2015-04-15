@@ -1,0 +1,41 @@
+﻿<div class="row" ng-controller="PatientProfileCtrl">
+    <div class="column col-xs-12">
+        <div id="pateintprofile" style="margin-top: 100px;">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-3 col-xs-3" align="center">
+                            <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-thumbnail">
+                            <button type="button" class="btn btn-xs btn-link">Edit</button>
+                        </div>
+                        <div class="col-md-9 col-xs-9">
+                            <table class="table table-user-information">
+                                <tbody>
+                                    <tr ng-repeat="patient in PatientDetails">
+                                        <td>Name:</td>
+                                        <td>{{{patient.name}}</td>
+                                        <td>Email ID:</td>
+                                        <td>{{patient.email}}</td>
+                                        <td>Mobile:</td>
+                                        <td>{{patient.mobile}}</td>
+                                        <td>Gender</td>
+                                        <td>{{patient.gender}}</td>
+                                        <td>Address:</td>
+                                        <td>{{patient.address}}</td>
+                                        <td>city:</td>
+                                        <td>{{patient.city}}</td>
+
+                                    </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-link">Edit Profile</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

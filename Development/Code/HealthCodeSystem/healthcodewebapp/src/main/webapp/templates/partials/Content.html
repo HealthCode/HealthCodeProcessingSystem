@@ -1,0 +1,206 @@
+﻿    <div ng-controller="Homectrl"class="row">
+        <div class="column col-xs-6">
+            <div class="panel panel-default tab-panel">
+                <div class="panel-body">
+                    <div class="">
+                        <h5>Find a Doctor &nbsp;&nbsp;&nbsp;&nbsp;   Book appointment &nbsp;&nbsp; &nbsp;&nbsp;    Meet Doctor</h5>
+
+
+                    </div>
+                    <ul id="myTab" class="nav nav-tabs nav-justified">
+                        <li class="active"><a href="#speciality" data-toggle="tab">Speciality</a>
+                        </li>
+                        <li class=""><a href="#doctor" data-toggle="tab">Doctor</a>
+                        </li>
+                        <li class=""><a href="#clinic" data-toggle="tab">Clinic</a>
+                        </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="speciality">
+                            <form role="form">
+                                <div class="form-group form-inline">
+                                    <select class="form-control" name="Specilaity">
+                                        <option>Gynecologist</option>
+                                        <option>Endichrinologist</option>
+                                        <option>opthamologist</option>
+                                        <option>Dentist</option>
+                                        <option>Dermatologist</option>
+                                    </select>
+
+                                    <select class="form-control" name="Location">
+                                        <option>Kphb</option>
+                                        <option>S.R Nagar</option>
+                                        <option>Nijampet</option>
+                                        <option>Ameerpet</option>
+                                        <option>Bala Nagar</option>
+                                    </select>
+                                    &nbsp;
+                                                <button class=" btn btn-search" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="doctor">
+                            <form role="form">
+                                <div class="form-group form-inline">
+                                    <input type="text" class="form-control" placeholder="Enter Doctor name" />
+                                    <button class=" btn btn-search" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="clinic">
+                            <form role="form">
+                                <div class="form-group form-inline">
+                                    <input type="text" class="form-control" placeholder="Enter Clinic name" />
+                                    <button class=" btn btn-search" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column col-xs-6">
+            <div class="panel panel-default tab-panel">
+                <div class="panel-body">
+                    <header id="myCarousel" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="fill" style="background-image: url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                                <div class="carousel-caption">
+                                    <h2>Caption 1</h2>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="fill" style="background-image: url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                                <div class="carousel-caption">
+                                    <h2>Caption 2</h2>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="fill" style="background-image: url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                                <div class="carousel-caption">
+                                    <h2>Caption 3</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Patient</h3>
+                </div>
+                <div class="panel-body">
+                    Patient can book appointments. He can maintain complete track of his health history.
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left" style="font-size: small">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Doctor</h3>
+                </div>
+                <div class="panel-body">
+                    Doctor can track his appointments and can add new clinic notes for patient.
+
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left" style="font-size: small">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Medical Store</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left" style="font-size: small">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Diagnostics</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left" style="font-size: small">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Medical Insurance</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left" style="font-size: small">View Details</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+   

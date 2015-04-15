@@ -1,0 +1,64 @@
+﻿<!--<h2 class="title">Health-Code Management solutions</h2>-->
+<div id="header">
+    <div class="col-xs-12" style="width: 100%; background-color: darkslateblue; text-align: center; font-weight: bolder; color: white">
+        <h2>Health-code Management Solutions</h2>
+    </div>
+    <div class="col-md-12" style="width: 101%; margin-left: 0px; ">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="position: relative">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="home">Health-Code</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">City<b class="caret"></b></a>
+                    <ul class="dropdown-menu city-dropdown" ng-repeat="city in cities">
+                        <!-- <li>
+                            <a href="#">Hyderabad</a>
+                        </li>
+                        <li>
+                            <a href="#">Banglore</a>
+                        </li>
+                        <li>
+                            <a href="#">Mumbai</a>
+                        </li>
+                        <li>
+                            <a href="#">Chennai</a>
+                        </li>-->
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-navicon"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a ng-href="/">Home</a>
+                        </li>
+                        <li>
+
+                            <a href="#/about">about</a>
+                        </li>
+                        <li>
+                            <a href="#/contact">Contact</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="login">Login</a>
+                        </li>
+                        <li>
+                            <a href="#/changepassword">Change Password</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
