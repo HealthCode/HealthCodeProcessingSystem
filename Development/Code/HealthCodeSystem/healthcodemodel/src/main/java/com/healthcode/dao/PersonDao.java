@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.healthcode.entity.PersonDetails;
 
 
-public interface PersonInterface<T>{
+public interface PersonDao<T>{
 
 	T getPersonByHealthCode(String healthCode);
 	

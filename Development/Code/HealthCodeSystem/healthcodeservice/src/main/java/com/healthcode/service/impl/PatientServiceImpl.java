@@ -10,15 +10,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import org.springframework.stereotype.Service;
 
-import com.healthcode.dao.OldPatientRepository;
+
 import com.healthcode.dao.PatientDao;
-import com.healthcode.dao.PatientRepository;
-import com.healthcode.dao.impl.PatientRepositoryImpl;
 import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
-@Service
-@Qualifier("New")
+@Service("New")
 //public class PatientServiceImpl extends CoreServiceImpl<Patient,PatientDao> implements PatientService{
 public class PatientServiceImpl extends PersonDetailServiceImpl<Patient,PatientDao> implements PatientService{
 	
@@ -34,7 +31,16 @@ public class PatientServiceImpl extends PersonDetailServiceImpl<Patient,PatientD
 		}
 	
 	public Patient getEntry(String key) {
-		return  patientRepository.getPersonByHealthCode(key);
+		System.out.println(" Getting the entry from DB from the key :" + key);
+		if(patientRepository != null)
+			System.out.println(" patientRepository not null");
+		Patient p =  patientRepository.getPersonByHealthCode(key);
+		if(p != null)
+		 System.out.println("p is not null ");
+		else
+			System.out.println("p is null ");
+			
+		return p;
 	}
 
 	

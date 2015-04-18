@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Service;
 
-import com.healthcode.dao.impl.BaseRepositoryImpl;
-import com.healthcode.dao.impl.PatientRepositoryImpl;
+
 import com.healthcode.service.CoreService;
 
 @Service
@@ -41,6 +40,7 @@ public class CoreServiceImpl<T,Repository extends MongoRepository<T, String>> im
 	}
 
 	public T getEntry(String key) {
+		System.out.println(" In Core Service : " + key);
 		return (T) dao.findOne(key);
 	}
 

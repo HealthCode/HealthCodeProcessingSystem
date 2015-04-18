@@ -53,7 +53,7 @@ public class PatientController {
 	public ModelAndView getPatient(@RequestParam(value = "healthCode", required=false)
 									String healthCode)	throws Exception
 	{
-		
+		System.out.println(" controller getPatient :" + healthCode);
 		ModelAndView patientMav = new ModelAndView("patientDetails");
 		Patient patients = patientService.getEntry(healthCode);
 		

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.healthcode.entity.Patient;
 
-@Repository(value = "Patient")
+@Repository("Patient")
 public interface PatientDao extends PatientRepository,MongoRepository<Patient, String>{
 
 }

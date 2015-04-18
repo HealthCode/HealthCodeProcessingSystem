@@ -17,7 +17,7 @@ import com.healthcode.entity.PersonDetails;
  *
  */
 
-public interface PatientRepository extends PersonInterface<Patient>{
+public interface PatientRepository extends PersonDao<Patient>{
 	
 	Collection<Patient> getPersonByDisease(String diseaseName);
 }

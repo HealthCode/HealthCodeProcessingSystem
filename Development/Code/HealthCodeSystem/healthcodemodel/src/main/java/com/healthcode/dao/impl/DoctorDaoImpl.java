@@ -3,6 +3,9 @@ package com.healthcode.dao.impl;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -21,24 +24,24 @@ import com.healthcode.entity.Patient;
 import com.mongodb.DBObject;
 import com.mongodb.QueryBuilder;
 
-@Repository(value = "Doctor")
-public class DoctorRepositoryImpl extends BaseRepositoryImpl<Doctor> implements DoctorRepository {
+@Repository("Doctor")
+public class DoctorDaoImpl extends PersonDaoImpl<Doctor> implements DoctorRepository {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
 	
-	public Doctor getPersonByHealthCode(String healthCode) {
-		
-		MongoOperations mongoOp = (MongoOperations) mongoTemplate;
-		
-		//Query 'Patient' collection by Health Code
-		Query searchPatientbyHealthCode = new Query(Criteria
-								.where(Constants.HEALTHCODE)
-								.is(healthCode)); 
-		Doctor doctor = mongoOp.findOne(searchPatientbyHealthCode,Doctor.class); 
-		
-		return doctor;
-	}
+//	public Doctor getPersonByHealthCode(String healthCode) {
+//		
+//		MongoOperations mongoOp = (MongoOperations) mongoTemplate;
+//		
+//		//Query 'Patient' collection by Health Code
+//		Query searchPatientbyHealthCode = new Query(Criteria
+//								.where(Constants.HEALTHCODE)
+//								.is(healthCode)); 
+//		Doctor doctor = mongoOp.findOne(searchPatientbyHealthCode,Doctor.class); 
+//		
+//		return doctor;
+//	}
 
 	@Override
 	public Collection<Doctor> getAllDoctorsBySpecilization(String specilization) {
@@ -65,7 +68,18 @@ public class DoctorRepositoryImpl extends BaseRepositoryImpl<Doctor> implements 
 		return null;
 	}
 
-
+    @PostConstruct
+    public void customInit()
+    {
+        System.out.println("Doctor Method customInit() invoked...");
+        
+    }
+     
+    @PreDestroy
+    public void customDestroy()
+    {
+        System.out.println("Doctor Method customDestroy() invoked...");
+    }
 
 
 }

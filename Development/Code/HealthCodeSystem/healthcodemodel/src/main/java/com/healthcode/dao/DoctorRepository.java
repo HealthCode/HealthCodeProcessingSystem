@@ -15,7 +15,7 @@ import com.healthcode.entity.Patient;
  *
  */
 
-public interface DoctorRepository extends PersonInterface<Doctor>{
+public interface DoctorRepository extends PersonDao<Doctor>{
 	
 	Collection<Doctor> getAllDoctorsBySpecilization(String specilization);
 	
