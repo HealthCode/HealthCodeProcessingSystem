@@ -12,6 +12,10 @@ app.run([
             if ($rootScope.authenticated) {
                 $location.path('/dashboard');
             }
+            
+           
+           
+            
         });
     }
 ]);
@@ -25,25 +29,12 @@ app.config([
                 'content@': { templateUrl: 'templates/partials/Content.html' },
                 'footer@': { templateUrl: 'templates/partials/Footer.html' }
             }
-        }).state('login', {
-            url: '/login',
+        }).state('loginafterRegis', {
+            url: '/loginafterRegis',
             views: {
                 'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/Login.html',
-                    controller: 'Loginctrl'
-                },
+                'content@': { templateUrl: 'Views/Login.html' },
                 'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('signup', {
-            url: '/signup',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/Registration.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-
             }
         }).state('dashboard', {
             url: '/dashboard',

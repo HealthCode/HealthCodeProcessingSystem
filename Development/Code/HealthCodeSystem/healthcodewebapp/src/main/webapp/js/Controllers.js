@@ -9,40 +9,21 @@
     ];
    }]);
 
-app.controller('Loginctrl', ['$scope', '$rootScope', '$location', 'authenticationService', function ($scope, $rootScope, $location, authenticationService) {
 
-    $scope.credentials = {};
 
-    $scope.login = function () {
-        var username = $scope.credentials.username;
-        var password = $scope.credentials.password;
-        authenticationService.Login(username, password, function (response) {
-            if (response.success) {
+//app.directive('signup', function() {
+//	return {
+//		restrict : 'A',
+//		link : function(scope, element, attr) {
+//			scope.dismiss = function() {
+//				element.modal('hide');
+//			};
+//		}
+//	}
+//});
+//
 
-                window.location.href = 'Dashboard.html#/dashboard/PatientHistory';
-                console.log("correct");
-            } else {
-                $scope.error = response.message;
-                console.log(response.message);
-            }
-        });
-
-    }
-
-}]);
-
-app.controller('RegistrationCtrl', function ($scope) {
-    $(document).ready(function() {
-        $("#Iagree").hide();
-        $("#btn-register").hide();
-    });
- $scope.changeFormbyRole = function () {
-     $("#Iagree").show();
-     $("#btn-register").show();
-      };
-
-});
-
+	
 app.controller('PatientHistoryCtrl', ['$scope', function ($scope) {
     //call a service that retrieving the visit details and set here
     $scope.VisitDetails = [

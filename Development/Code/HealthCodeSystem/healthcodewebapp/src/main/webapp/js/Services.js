@@ -15,8 +15,31 @@
     }
 }]);
 
-//app.service('authenticationService', [
-//    '$http', '$timeout', '$q', function ($http, $timeout, $q) {
+app.service('RegistrationService', function($http, $q) {
+
+	return {
+		Register : function(userinfo) {
+
+			var deferred = $q.defer();
+			$http.post('new/savepatientdetails.do', userinfo)
+					.success(function(userinfo) {
+						if (userinfo != null) {
+						deferred.resolve(userinfo);
+						} else {
+							deferred.reject("Error saving userinfo");
+						}
+					}).error(function(error) {
+						console.log("Error saving userinfo")
+						deferred.reject("Error saving userinfo");
+					});
+			return deferred.promise;
+		}
+
+	}
+});
+
+// app.service('authenticationService', [
+// '$http', '$timeout', '$q', function ($http, $timeout, $q) {
 //        var authenticatedUser = null;
 //        return {
 //            requestUser: function () {

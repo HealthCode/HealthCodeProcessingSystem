@@ -12,16 +12,21 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="lib/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="lib/Bootstrap/css/formValidation.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/HealthCode.css" rel="stylesheet">
 
+	<!--  Google fonts  -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	
     <!-- Custom Fonts -->
     <link href="lib/Bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Angular Files  -->
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular/angular-ui-router.min.js"></script>
     <script src="lib/angular/angular-animate.min.js"></script>
+    
     <style>
        
     </style>
@@ -33,23 +38,29 @@
        
         <div class="container-fluid">
          
-            
             <div ui-view="content"></div>
 
             <!-- <div ui-view></div>-->
         </div>
+        <div id="push"></div>
     </div>
+    
   <div ui-view="footer"></div>
 </div>
     <script src="lib/Bootstrap/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="lib/Bootstrap/js/bootstrap.min.js"></script>
+    
+     <script src="lib/Bootstrap/js/formValidation.js"></script>
+      <script src="lib/Bootstrap/js/bootstrap.js"></script>
     <script src="lib/Bootstrap/js/HealthCode.js" type="text/javascript"></script>
 
     <script src="js/main.js"></script>
     <script src="js/Services.js"></script>
     <script src="js/Controllers.js"></script>
+     <script src="Registration/RegistrationController.js"></script>
+     <script src="Login/LoginController.js"></script>
     <script type="text/javascript">
     </script>
 

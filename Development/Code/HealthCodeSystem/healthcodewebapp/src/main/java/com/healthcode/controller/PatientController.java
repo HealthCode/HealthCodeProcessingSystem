@@ -6,12 +6,18 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.healthcode.dto.ResponseMessage;
+import com.healthcode.dto.UserDetails;
 import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
@@ -32,20 +38,23 @@ public class PatientController {
 		return patientMav;
 	}
 	
-	@RequestMapping(value = "new/savepatientdetails.do",
-					method = {RequestMethod.POST, RequestMethod.GET})
-	public ModelAndView savePersonDetails(@RequestParam(value = "healthCode", required=false)
-											String healthCode) throws Exception
+	/*
+	 * This method will register a new patient in the 
+	 * 
+	 * 
+	 */
+	@RequestMapping(value = "new/savepatientdetails.do",method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<ResponseMessage<String>> savePersonDetails(@RequestBody UserDetails userDetails) throws Exception
 	{
-		ModelAndView patientMav = new ModelAndView("patientDetails");
 		Patient newPatient = new Patient();
-		newPatient.setFirstName(healthCode + " " + "FirstName");
-		newPatient.setLastName(healthCode + " " + "LastName");
-		newPatient.setHealthCode(healthCode);
+		newPatient.setFirstName(userDetails.getFirstName());
+		newPatient.setLastName(userDetails.getLastName());
 		patientService.AddEntry(newPatient);
-		JSONObject jsonPatient = JSONObject.fromObject(newPatient);
-		patientMav.addObject("patients", jsonPatient.toString());
-		return patientMav;
+		
+		ResponseMessage<String> response = new ResponseMessage.Builder<String>().success("User created").build();
+		
+		return new ResponseEntity<>(response, HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(value = "new/getpatient.do",
@@ -53,7 +62,7 @@ public class PatientController {
 	public ModelAndView getPatient(@RequestParam(value = "healthCode", required=false)
 									String healthCode)	throws Exception
 	{
-		System.out.println(" controller getPatient :" + healthCode);
+		
 		ModelAndView patientMav = new ModelAndView("patientDetails");
 		Patient patients = patientService.getEntry(healthCode);
 		

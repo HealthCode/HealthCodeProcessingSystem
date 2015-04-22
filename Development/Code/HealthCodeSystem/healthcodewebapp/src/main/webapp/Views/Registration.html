@@ -1,297 +1,301 @@
-﻿<div ng-controller="RegistrationCtrl" id="signupbox" style="padding-top: 100px; padding-left: 250px; padding-right: 250px;">
-    <form id="signupform" class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="control-label col-md-3">I am </label>
-            <div class="input-group col-md-9 styled-select">
-                <select class="form-control" ng-model="role" ng-change="changeFormbyRole(role)">
-                    <option value="" selected="selected" class="disable">Choose your role</option>
-                    <option value="Patient">Patient</option>
-                    <option value="Doctor">Doctor</option>
-                    <option value="MedicalStore">Medical Store</option>
-                    <option value="diagnostics">diagnostics</option>
-                </select>
-            </div>
-        </div>
-        <div id="patientsignupbox" class="patientsignupbox" ng-show="role=='Patient'">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="FullName">Full Name </label>
-                <div class="input-group col-md-9 mandotbuttons">
-                    <input type="text" class="form-control" name="FullName" id="FullName" placeholder="Enter Full Name" ng-model="user.fullname" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Email">Email ID </label>
-                <div class="input-group col-md-9">
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter Email Id" ng-model="user.email" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Mobile">Mobile</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Mobile" id="Mobile" placeholder="Enter Mobile Number" ng-model="user.mobile" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class=" col-md-3 control-label" for="Address">Address</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Address" id="Address" placeholder="Enter Address" ng-model="user.address" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="City">City</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="City" id="City" placeholder="Enter City" ng-model="user.city" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Password">Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password" ng-model="user.password" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="ConfirmPassword">Confirm Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" ng-model="user.confirmpassword" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-        </div>
-        <div id="Doctorsignupbox" ng-show="role=='Doctor'">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="FullName">Full Name </label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="FullName" id="FullName" placeholder="Enter Full Name" ng-model="doctor.fullname" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Email">Email ID </label>
-                <div class="input-group col-md-9">
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter Email Id" ng-model="doctor.email" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Mobile">Mobile</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Mobile" id="Mobile" placeholder="Enter Mobile Number" ng-model="doctor.mobile" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3">Speciality </label>
-                <div class="input-group col-md-9">
-                    <select class="form-control" ng-model="doctor.speciality">
-                        <option value="" selected="selected" class="disable">Choose Your Speciality</option>
-                        <option value="Gynecologist">Gynecologist</option>
-                        <option value="Endichrinologist">Endichrinologist</option>
-                        <option value="opthamologist">opthamologist</option>
-                        <option value="Dentist">Dentist</option>
-                        <option value="Dermatologist">Dermatologist</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="City">City</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="City" id="City" placeholder="Enter City" ng-model="doctor.city" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Location">Location</label>
-                <div class="input-group col-md-9">
-                    <select class="form-control" name="Location" id="Location" ng-model="doctor.location" required>
-                        <option value="" selected="selected" class="disable">Choose your Location</option>
-                        <option>Kphb</option>
-                        <option>S.R Nagar</option>
-                        <option>Nijampet</option>
-                        <option>Ameerpet</option>
-                        <option>Bala Nagar</option>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                    </select>
 
-                </div>
-            </div>
-            <div class="form-group">
-                <label class=" col-md-3 control-label" for="ClinicAddress">Clinic Address</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="ClinicAddress" id="ClinicAddress" placeholder="Enter Clinic Address" ng-model="doctor.clinicaddress" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Password">Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password" ng-model="user.password" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="ConfirmPassword">Confirm Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" ng-model="user.confirmpassword" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-        </div>
-        <div id="Mstoresignupbox" ng-show="role=='MedicalStore'">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="FullName">Medical Store Name </label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Msname" id="Msname" placeholder="Enter Medical Store Name" ng-model="ms.name" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Email">Email ID </label>
-                <div class="input-group col-md-9">
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter Email Id" ng-model="ms.email" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Mobile">Mobile</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Mobile" id="Mobile" placeholder="Enter Mobile Number" ng-model="ms.mobile" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="City">City</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="City" id="City" placeholder="Enter City" ng-model="ms.city" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Location">Location</label>
-                <div class="input-group col-md-9">
-                    <select class="form-control" name="Location" id="Location" placeholder="Enter Location" ng-model="ms.location" required>
-                        <option value="" selected="selected" class="disable">Choose your Location</option>
-                        <option>Kphb</option>
-                        <option>S.R Nagar</option>
-                        <option>Nijampet</option>
-                        <option>Ameerpet</option>
-                        <option>Bala Nagar</option>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                    </select>
+<div class="container" ng-controller="RegistrationCtrl"
+	ng-init="initializeController()" style="width: 600px">
+	<div class="panel  panel-info">
+		<div class="panel-heading">
+			<div class="panel-title">Sign Up</div>
+		</div>
+		<div class="panel-body" style="padding-top: 20px">
+       
+			<form id="signupform" class="form-horizontal">
+				
+				<div class="form-group">
+					<label class="control-label col-lg-3">I am </label>
+					<div class="col-lg-5">
+						<select class="form-control" data-fv-notempty
+							data-fv-notempty-message="The Role is required"
+							ng-model="user.role" ng-change="changeFormbyRole(user.role)">
+							<option value="" selected="selected" class="disable">Choose
+								your role</option>
+							<option value="Patient">Patient</option>
+							<option value="Doctor">Doctor</option>
+						</select>
+					</div>
+				</div>
+			</form>
+			<form id="patientsignupform" name="patientform" class="form-horizontal" role="form" ng-show="user.role=='Patient'" ng-submit="SubmitForm(user)">
 
-                </div>
-            </div>
-            <div class="form-group">
-                <label class=" col-md-3 control-label" for="ClinicAddress">Clinic Address</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Msaddress" id="Msaddress" placeholder="Enter Medical store Address" ng-model="doctor.clinicaddress" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Password">Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password" ng-model="ms.password" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="ConfirmPassword">Confirm Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" ng-model="ms.confirmpassword" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-        </div>
-        <div id="DiagnosticSignupbox" ng-show="role=='diagnostics'">
-            <div class="form-group">
-                <label class="control-label col-md-3" for="FullName">Diagnostic Center Name </label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Msname" id="Msname" placeholder="Enter Diagnostic Center Name" ng-model="ms.name" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Email">Email ID </label>
-                <div class="input-group col-md-9">
-                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Enter Email Id" ng-model="d.email" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-md-3" for="Mobile">Mobile</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="Mobile" id="Mobile" placeholder="Enter Mobile Number" ng-model="d.mobile" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="City">City</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="City" id="City" placeholder="Enter City" ng-model="d.city" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Location">Location</label>
-                <div class="input-group col-md-9">
-                    <select class="form-control" name="Location" id="Location" placeholder="Enter Location" ng-model="d.location" required>
-                        <option value="" selected="selected" class="disable">Choose your Location</option>
-                        <option>Kphb</option>
-                        <option>S.R Nagar</option>
-                        <option>Nijampet</option>
-                        <option>Ameerpet</option>
-                        <option>Bala Nagar</option>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                    </select>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Full name</label>
+					<div class="col-lg-4">
+						<input type="text" class="form-control" name="firstName"
+							placeholder="First name" required ng-model="user.firstname" />
+					</div>
 
-                </div>
-            </div>
-            <div class="form-group">
-                <label class=" col-md-3 control-label" for="ClinicAddress">Address</label>
-                <div class="input-group col-md-9">
-                    <input type="text" class="form-control" name="address" id="address" placeholder="Enter Medical store Address" ng-model="d.address" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="Password">Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Enter Password" ng-model="d.password" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="ConfirmPassword">Confirm Password</label>
-                <div class="input-group col-md-9">
-                    <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" placeholder="Enter Confirm Password" ng-model="d.confirmpassword" required>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                </div>
-            </div>
-        </div>
-        <div class="input-group col-md-offset-3 col-md-9" id="Iagree">
-            <div class="checkbox">
-                <label>
-                    <input id="I-agree" type="checkbox" name="Iagree" value="1">
-                    I agree
-                </label>
-            </div>
-        </div>
+					<div class="col-lg-4">
+						<input type="text" class="form-control" name="lastName"
+							placeholder="Last name" required ng-model="user.lastname" />
+					</div>
+				</div>
 
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Username</label>
+					<div class="col-lg-5">
+						<input type="text" class="form-control" name="userName" required
+							ng-model="user.username" />
+					</div>
+				</div>
 
-        <div style="margin-top: 10px" class="form-group" id="btn-register">
-            <!-- Button -->
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Email address</label>
+					<div class="col-lg-5">
+						<input class="form-control" name="email" type="email" required
+							ng-model="user.email" />
+					</div>
+				</div>
 
-            <div class="col-md-offset-3 col-md-9">
-                <a id="btn-register" href="#" class="btn btn-success">Register </a>
-            </div>
-        </div>
-    </form>
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Mobile</label>
+					<div class="col-lg-5">
+						<input class="form-control" name="mobile" type="text" required
+							ng-model="user.mobile" />
+					</div>
+				</div>
 
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Password</label>
+					<div class="col-lg-5">
+						<input type="password" class="form-control" name="password"
+							required ng-model="user.password" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Retype password</label>
+					<div class="col-lg-5">
+						<input type="password" class="form-control" name="confirmPassword"
+							required ng-model="user.confirmpassword" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Gender</label>
+					<div class="col-lg-5">
+						<div class="radio">
+							<label> <input type="radio" name="gender" value="male"
+								required ng-model="user.gender" /> Male
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="gender" value="female" />
+								Female
+							</label>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">City</label>
+					<div class="col-lg-5">
+						<select class="form-control" name="city" ng-model="user.city">
+							<option value="">-- Select a country --</option>
+							<option value="fr">Hyderabad</option>
+							<option value="de">Germany</option>
+							<option value="it">Italy</option>
+							<option value="jp">Japan</option>
+							<option value="ru">Russia</option>
+							<option value="gb">United Kingdom</option>
+							<option value="us">United State</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class=" col-lg-3 control-label" for="Address">Address</label>
+					<div class="col-lg-5">
+						<textarea class="form-control" name="address" rows="5" required
+							ng-model="user.address"></textarea>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-5 col-lg-offset-3">
+						<div class="checkbox">
+							<input type="checkbox" name="acceptTerms" /> Accept the terms
+							and policies
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-5 col-lg-offset-3">
+						<button id="btn-register" class="btn btn-primary" 
+							 ng-disabled="" >Sign up</button>
+					</div>
+				</div>
+
+			</form>
+			<form id="Doctorsignupform" class="form-horizontal"
+				data-fv-message="This value is not valid"
+				data-fv-icon-valid="glyphicon glyphicon-ok"
+				data-fv-icon-invalid="glyphicon glyphicon-remove"
+				data-fv-icon-validating="glyphicon glyphicon-refresh"
+				ng-show="user.role=='Doctor'">
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Full name</label>
+					<div class="col-lg-4">
+						<input type="text" class="form-control" name="firstName"
+							placeholder="First name" required
+							data-fv-notempty-message="The first name is required and cannot be empty"
+							ng-model="user.firstname" />
+					</div>
+					<div class="col-lg-4">
+						<input type="text" class="form-control" name="lastName"
+							placeholder="Last name" required
+							data-fv-notempty-message="The last name is required and cannot be empty"
+							ng-model="user.lastname" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Username</label>
+					<div class="col-lg-5">
+						<input type="text" class="form-control" name="username"
+							data-fv-message="The username is not valid" required
+							data-fv-notempty-message="The username is required and cannot be empty"
+							pattern="^[a-zA-Z0-9]+$"
+							data-fv-regexp-message="The username can only consist of alphabetical and digits"
+							data-fv-stringlength="true" data-fv-stringlength-min="6"
+							data-fv-stringlength-max="30"
+							data-fv-stringlength-message="The username must be more than 6 and less than 30 characters long"
+							ng-model="user.username" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Email address</label>
+					<div class="col-lg-5">
+						<input class="form-control" name="email" type="email" required
+							data-fv-notempty-message="The email is required and cannot be empty"
+							data-fv-emailaddress-message="The input is not a valid email address"
+							ng-model="user.email" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Mobile</label>
+					<div class="col-lg-5">
+						<input class="form-control" name="mobile" type="text" required
+							data-fv-notempty-message="The Mobile number is required and cannot be empty"
+							ng-model="user.mobile" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Password</label>
+					<div class="col-lg-5">
+						<input type="password" class="form-control" name="password"
+							required
+							data-fv-notempty-message="The password is required and cannot be empty"
+							data-fv-different="true" data-fv-different-field="username"
+							data-fv-different-message="The password cannot be the same as username"
+							ng-model="user.password" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Retype password</label>
+					<div class="col-lg-5">
+						<input type="password" class="form-control" name="confirmPassword"
+							required
+							data-fv-notempty-message="The confirm password is required and cannot be empty"
+							data-fv-identical="true" data-fv-identical-field="password"
+							data-fv-identical-message="The password and its confirm are not the same"
+							ng-model="user.confirmpassword" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">Gender</label>
+					<div class="col-lg-5">
+						<div class="radio">
+							<label> <input type="radio" name="gender" value="male"
+								required data-fv-notempty-message="The gender is required"
+								ng-model="user.gender" /> Male
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="gender" value="female" />
+								Female
+							</label>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-lg-3 control-label">City</label>
+					<div class="col-lg-5">
+						<select class="form-control" name="city" data-fv-notempty
+							data-fv-notempty-message="The city is required"
+							ng-model="user.city">
+							<option value="">-- Select a country --</option>
+							<option value="fr">Hyderabad</option>
+							<option value="de">Germany</option>
+							<option value="it">Italy</option>
+							<option value="jp">Japan</option>
+							<option value="ru">Russia</option>
+							<option value="gb">United Kingdom</option>
+							<option value="us">United State</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-lg-3">Speciality </label>
+					<div class="col-lg-5">
+						<select class="form-control" name="speciality" multiple="multiple"
+							data-fv-notempty
+							data-fv-notempty-message="The Speciality is required"
+							ng-model="user.speciality">
+							<option value="" selected="selected" class="disable">Choose
+								Your Speciality</option>
+							<option value="Gynecologist">Gynecologist</option>
+							<option value="Endichrinologist">Endichrinologist</option>
+							<option value="opthamologist">opthamologist</option>
+							<option value="Dentist">Dentist</option>
+							<option value="Dermatologist">Dermatologist</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class=" col-lg-3 control-label" for="Address">Clinic
+						Address</label>
+					<div class="col-lg-5">
+						<textarea class="form-control" name="address" rows="5" required
+							data-fv-notempty-message="The Address is required and cannot be empty"
+							ng-model="user.address"></textarea>
+					</div>
+				</div>
+
+				<div class="form-group" id="Iagree">
+					<div class="checkbox col-lg-9 col-lg-offset-3">
+						<label> <input id="I-agree" type="checkbox" name="Iagree"
+							value="1" required data-fv-notempty-message="Please agree">
+							I agree
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-lg-9 col-lg-offset-3">
+						<button type="submit" id="btn-register" class="btn btn-primary">Sign
+							up</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
-
+<script>
+	
+</script>
