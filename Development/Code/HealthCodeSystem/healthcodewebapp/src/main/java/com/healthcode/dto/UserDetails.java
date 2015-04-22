@@ -1,11 +1,5 @@
 package com.healthcode.dto;
 
-
-/**
- * @author Gopal Gorthi
- *
- */
-
 public class UserDetails {
 
 

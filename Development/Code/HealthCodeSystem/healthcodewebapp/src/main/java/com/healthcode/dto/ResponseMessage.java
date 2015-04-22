@@ -2,11 +2,6 @@ package com.healthcode.dto;
 
 import java.util.List;
 
-/**
- * @author Gopal Gorthi
- * @param <T>
- *
- */
 public class ResponseMessage<T> {
 	
 	public enum Type {

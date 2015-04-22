@@ -1,10 +1,5 @@
 package com.healthcode.dto;
 
-/**
- * @author Gopal Gorthi
- *
- */
-
 public enum UserRole {
 
 	Patient(0),
