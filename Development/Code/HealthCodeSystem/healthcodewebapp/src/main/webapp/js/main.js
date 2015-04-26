@@ -1,4 +1,5 @@
 ﻿var app = angular.module('Healthcodeapp', ['ui.router']);
+
 var roles = { patient: 0, doctor: 1 };
 var routeForUnauthorizedAccess = '/';
 app.run([
@@ -10,17 +11,13 @@ app.run([
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
             if ($rootScope.authenticated) {
-                $location.path('/dashboard');
+                $location.path('/patientDashboard');
             }
-            
-           
-           
-            
+              
         });
     }
 ]);
-app.config([
-    '$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider.state('home', {
             url: '/',
@@ -33,65 +30,115 @@ app.config([
             url: '/loginafterRegis',
             views: {
                 'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': { templateUrl: 'Views/Login.html' },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('dashboard', {
-            url: '/dashboard',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('dashboard.PatientHistory', {
-            url: '/PatientHistory',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/PatientHistory.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('dashboard.PatientProfile', {
-            url: '/PatientProfile',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/Patientprofile.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-
-        }).state('dashboard.Bookappointment', {
-            url: '/Bookappointment',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/Bookappointment.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('dashboard.ViewReports', {
-            url: '/ViewReports',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/ViewReports.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
-            }
-        }).state('dashboard.Prescription', {
-            url: '/Prescription',
-            views: {
-                'header@': { templateUrl: 'templates/partials/Header.html' },
-                'content@': {
-                    templateUrl: 'templates/partials/Prescription.html'
-                },
-                'footer@': { templateUrl: 'templates/partials/Footer.html' }
+                'content@': { templateUrl: 'Usermanagement/Login.html',
+                	           controller: 'Loginctrl'},
+                'footer@': { templateUrl: 'templates/partials/Footer.html'
+                	}
             }
         });
     }
 ]);
 
+var Patientapp=angular.module('Patientapp',['ui.router' ,'Healthcodeapp' ]);
+Patientapp.config((['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) { 
+    	
+	    $urlRouterProvider.otherwise('/patientDashboard.PatientHistory');
+
+			$stateProvider.state('patientDashboard', {
+				url : '/patientDashboard',
+				views : {
+					
+					'sidenav@': { 
+						templateUrl: 'templates/partials/SideNav.html'
+						},
+					'footer@' : {
+						templateUrl : 'templates/partials/Footer.html'
+					}
+				}
+			}).state('patientDashboard.PatientHistory', {
+				url : '/PatientHistory',
+				views : {
+					'sidenav@': { 
+						templateUrl: 'templates/partials/SideNav.html'
+						},
+					'content@' : {
+						templateUrl : 'Patient/History.html',
+						controller: 'HistoryCtrl'
+					}
+				}
+			}).state('patientDashboard.PatientProfile', {
+				url : '/PatientProfile',
+				views : {
+					
+					'content@' : {
+						templateUrl : 'Patient/Profile.html',
+						controller: 'ProfileCtrl'
+					}
+				}
+
+			}).state('patientDashboard.Bookappointment', {
+				url : '/Bookappointment', 
+				views : {
+					
+					'content@' : {
+						templateUrl : 'Patient/Bookappointment.html'
+					}
+				}
+			}).state('patientDashboard.ViewReports', {
+				url : '/ViewReports',
+				views : {
+				
+					'content@' : {
+						templateUrl : 'Patient/ViewReports.html'
+					}
+				}
+			}).state('patientDashboard.Prescription', {
+				url : '/Prescription',
+				views : {
+					
+					'content@' : {
+						templateUrl : 'Patient/Prescription.html'
+					}
+				}
+			});
+        
+    }]));
+
+Patientapp.controller('Sidenavctrl', ['$scope', function ($scope){
+		
+ $scope.MenuItems = [ {
+		Description : "View History",
+		route : "patientDashboard.PatientHistory"
+	}, {
+		Description : "View Profile",
+		route : "patientDashboard.PatientProfile"
+	}, {
+		Description : "Book appointment",
+		route : "patientDashboard.Bookappointment"
+	}, {
+		Description : "View Reports",
+		route : "patientDashboard.ViewReports"
+	}, {
+		Description : "View Prescription",
+		route : "patientDashboard.Prescription"
+	} ];
+	
+}]);
+
+
+
+//app.controller('Homectrl', ['$scope', function ($scope) {
+//    //call a service that retrieving the details of user..depends on the user role we will add list to menu
+//    $scope.MenuItems = [
+//        { Description: "View History", route: "patientDashboard.PatientHistory" },
+//        { Description: "View Profile", route: "patientDashboard.PatientProfile" },
+//        { Description: "Book appointment", route: "patientDashboard.Bookappointment" },
+//        { Description: "View Reports", route: "patientDashboard.ViewReports" },
+//        { Description: "View Prescription", route: "patientDashboard.Prescription" }
+//    ];
+//    
+//   
+//   }]);
 
 
 

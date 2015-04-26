@@ -1,0 +1,29 @@
+
+<div class="row" ng-controller="HistoryCtrl">
+    <div class="column col-xs-12">
+        <div id="patientHistory" style="margin-top: 30px;">
+            <table class="table table-history">
+                <thead>
+                    <tr>
+                        <th>Visited Doctor</th>
+                        <th>Visited Time</th>
+                        <th>Hospital</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+
+                <tbody ng-if="VisitDetails.length>0">
+                <tr ng-repeat="visit in VisitDetails">
+                    <td>{{visit.Doctor}}</td>
+                    <td>{{visit.Time}}</td>
+                    <td>{{visit.Hospital}}</td>
+                    <td>
+                        <button type="submit" class="btn btn-xs btn-info" ng-click="ViewHistory(visit.Id)">View</button></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+

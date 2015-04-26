@@ -1,4 +1,4 @@
-app.controller('Loginctrl', ['$scope', '$rootScope', '$location', 'authenticationService', function ($scope, $rootScope, $location, authenticationService) {
+app.controller('Loginctrl', ['$scope', 'authenticationService', function ($scope,authenticationService) {
 
 	
     $scope.credentials = {};
@@ -11,7 +11,7 @@ app.controller('Loginctrl', ['$scope', '$rootScope', '$location', 'authenticatio
         authenticationService.Login(username, password, function (response) {
             if (response.success) {
 
-                window.location.href = 'Dashboard.html#/dashboard/PatientHistory';
+                window.location.href = 'PatientDashboard.html#/patientDashboard/PatientHistory';
                 console.log("correct");
             } else {
                 $scope.error = response.message;

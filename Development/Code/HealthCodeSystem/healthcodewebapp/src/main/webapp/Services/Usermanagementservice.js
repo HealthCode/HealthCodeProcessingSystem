@@ -1,4 +1,60 @@
-﻿app.factory('authenticationService', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
+app.service('usermanagementService', ['$rootScope','$location','httpService','$window',function($rootScope,$location,httpService,$window) {
+
+	
+		this.RegisterUser= function(User) {
+			
+			httpService.PostData('patientdetails.do', User).then(function (response) {
+            	if (response.type == "success") {
+            		console.log('success');
+            		$rootScope.message=response.text;
+            	    $location.path('/loginafterRegis');
+                    }
+                else {
+                	 console.log('Error saving userinfo');
+                }
+                               
+            });
+		};
+		
+//		this.Login=function(Credentials){
+//			
+//			httpService.PostData('.do', Credentails).then(function(response,headers){
+//				
+//				if(response.type=="success"){
+//					var userInfo={
+//							
+//							accessToken: headers('access_token'),
+//							username   : response.result.username,
+//							healthcode : response.result.healthcode,
+//							role       : response.result.role
+//							
+//					};
+//							
+//					
+//					$window.sessionStorage["userinfo"]=JSON.stringify(userinfo);
+//					console.log('success');
+//					$rootScope.authenticated=true;
+//					$rootScope.message=response.text;
+//					if(role=="patient"){
+//						 window.location.href = 'PatientDashboard.html#/patientDashboard';
+//					}
+//				
+//				}
+//				
+//				else{
+//					 console.log('Not authenticated');
+//					 $rootScope.message=response.text;
+//					 $location.path('/');
+//				}
+//				
+//			});
+//		}
+			
+
+				
+}]);	
+
+app.factory('authenticationService', ['$rootScope', '$timeout', function ($rootScope, $timeout) {
     return {
         Login: function (username, password, callback) {
             $timeout(function () {
@@ -7,36 +63,15 @@
                     response.message = 'Username or password is incorrect';
                     $rootScope.authenticated = false;
                 }
-                else { $rootScope.authenticated = true; }
+                else { 
+                	$rootScope.authenticated = true; }
                 callback(response);
             }, 1000);
         }
 
     }
 }]);
-
-app.service('RegistrationService', function($http, $q) {
-
-	return {
-		Register : function(userinfo) {
-
-			var deferred = $q.defer();
-			$http.post('new/savepatientdetails.do', userinfo)
-					.success(function(userinfo) {
-						if (userinfo != null) {
-						deferred.resolve(userinfo);
-						} else {
-							deferred.reject("Error saving userinfo");
-						}
-					}).error(function(error) {
-						console.log("Error saving userinfo")
-						deferred.reject("Error saving userinfo");
-					});
-			return deferred.promise;
-		}
-
-	}
-});
+	
 
 // app.service('authenticationService', [
 // '$http', '$timeout', '$q', function ($http, $timeout, $q) {

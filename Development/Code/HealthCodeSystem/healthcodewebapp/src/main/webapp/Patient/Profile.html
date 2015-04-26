@@ -1,0 +1,145 @@
+<div class="row" ng-controller="ProfileCtrl">
+	<div class="column col-xs-12">
+		<div id="pateintprofile" style="margin-top: 30px;">
+			<div class="panel-body inf-content">
+				<div class="row" style="margin-top: 20px;">
+					<div class="col-md-4" align="center">
+						<img alt="User Pic"
+							src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+							class="img-thumbnail">
+						<button type="button" class="btn btn-xs btn-link">Edit</button>
+					</div>
+
+					<div class="col-md-6">
+						<table
+							class="table table-condensed table-responsive table-user-information">
+
+
+							<tr>
+								<td><strong class="font-global control-label">Health Code</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="healthCode"></div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">First Name</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="firstName" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="firstName"
+											required ng-model="firstName" />
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">Last Name</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="lastName" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="lastName"
+											required ng-model="lastName" />
+									</div>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td><strong class="font-global">User Name</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="userName" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="userName"
+											required ng-model="userName" />
+									</div>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td><strong class="font-global control-label">Email</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="email" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="email" required
+											ng-model="email" />
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">Mobile</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="mobile" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="mobile" required
+											ng-model="mobile" />
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">Gender</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="gender" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="gender" required
+											ng-model="gender" />
+									</div>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td><strong class="font-global">Age</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="age" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="age" required
+											ng-model="age" />
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">City</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="city" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="city" required
+											ng-model="city" />
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td><strong class="font-global control-label">Address</strong></td>
+								<td class="text-primary font-global">
+									<div ng-bind="address" ng-show="DisplayMode"></div>
+									<div ng-show="EditMode">
+										<input type="text" class="form-control font-global" name="address"
+											required ng-model="address" />
+									</div>
+								</td>
+							</tr>
+
+
+						</table>
+					</div>
+				</div>
+				<div class="pull-right">
+					<button ng-show="ShowEditButton" type="button" class="btn btn-link"
+						ng-click="editUser()">Edit Profile</button>
+					<button ng-show="ShowCancelButton" type="button"
+						class="btn btn-link" ng-click="updateUser()">Update</button>
+					<button ng-show="ShowUpdateButton" type="button"
+						class="btn btn-link" ng-click="cancel()">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

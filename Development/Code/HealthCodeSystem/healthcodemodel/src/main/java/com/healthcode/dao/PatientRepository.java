@@ -20,4 +20,6 @@ import com.healthcode.entity.PersonDetails;
 public interface PatientRepository extends PersonDao<Patient>{
 	
 	Collection<Patient> getPersonByDisease(String diseaseName);
+	
+	
 }

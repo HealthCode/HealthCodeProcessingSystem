@@ -1,1 +1,9 @@
-﻿
+<div id="sidebar-wrapper" ng-controller="Sidenavctrl">
+    <ul class="sidebar-nav">
+        <li ng-repeat="menuItem in MenuItems">
+            <a ui-sref="{{menuItem.route}}">{{menuItem.Description}}</a>
+             
+    </ul>
+</div>
+
+  
