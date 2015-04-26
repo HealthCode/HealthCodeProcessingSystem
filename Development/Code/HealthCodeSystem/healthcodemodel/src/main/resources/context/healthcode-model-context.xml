@@ -14,16 +14,24 @@
 	<!-- context:component-scan base-package="org.springframework.data.mongodb.core.MongoTemplate"/-->
 	<context:annotation-config />
 
+<!-- 	
 	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
 			<property name="host" value="localhost" />
 			<property name="port" value="27017" />
 	</bean>
+	
+	
+	<bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
+        <property name="username" value="dbclient" />
+        <property name="password" value="mongodb" />
+    </bean>
 
 	<bean id="mongoTemplate" name="mongoDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
 			<constructor-arg name="mongo" ref="mongoDB" />
 			<constructor-arg name="databaseName" value="HealthCodeDB" />
+			<constructor-arg name="userCredentials" ref="mongoCredentials"/>
 	</bean>
-	
+	 -->
 		<!-- bean id="mongoOp"  class="org.springframework.data.mongodb.core.MongoOperations">
 			<property name="mongoOp" ref="mongoDbInstance" />
 	</bean-->
@@ -31,8 +39,14 @@
 		<!-- bean id="OldPatientRepositoryImpl" class="com.healthcode.dao.impl.OldPatientRepositoryImpl"></bean>
 		<bean id="OldPatientRepository" class="com.healthcode.dao.OldPatientRepository"></bean-->
 	
-	<!-- ds061308.mongolab.com:61308/hcprjdb01  -->
-	<!-- 
+	<!-- ds061308.mongolab.com:61308/hcprjdb01 -->  
+	
+	<bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
+        <constructor-arg name="username" value="dbclient" />
+        <constructor-arg name="password" value="mongodb" />
+    </bean>
+
+	
 	<bean id="mongoDB" class="org.springframework.data.mongodb.core.MongoFactoryBean">
 			<property name="host" value="ds061308.mongolab.com" />
 			<property name="port" value="61308" />
@@ -41,9 +55,9 @@
 	<bean id="mongoTemplate" name="mongoDbInstance" class="org.springframework.data.mongodb.core.MongoTemplate">
 			<constructor-arg name="mongo" ref="mongoDB" />
 			<constructor-arg name="databaseName" value="hcprjdb01" />
+			<constructor-arg name="userCredentials" ref="mongoCredentials"/>			
 	</bean>
 	
-		-->
 	<mongo:repositories base-package="com.healthcode.dao" />
 	<mongo:repositories base-package="com.healthcode.dao.impl" />
 	
