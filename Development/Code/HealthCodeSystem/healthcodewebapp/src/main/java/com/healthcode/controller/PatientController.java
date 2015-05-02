@@ -24,13 +24,13 @@ import com.healthcode.entity.Patient;
 import com.healthcode.service.PatientService;
 
 @Controller
-@RequestMapping("patientdetails.do")
+@RequestMapping("/patientdetails")
 public class PatientController {
 	
 	@Autowired
 	private PatientService patientService;
 	
-	@RequestMapping("new/allpatients.do")
+	@RequestMapping("/allpatients.do")
 	public ModelAndView getAllPatients() throws Exception
 	{
 		ModelAndView patientMav = new ModelAndView("patientDetails");
